@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Document</title>
+    <style>
+        
+
+        .details_one {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            width: 80%;
+            margin-top: -3px;
+        }
+
+        .details img {
+            width: 500px;
+            height: 500px;
+            border-radius: 10px;
+            margin-right: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .details-content h2{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 44px;
+            text-shadow: 0px 0px 2px;
+        }
+        .details-content p{
+                 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                 font-size: 20px;
+        }
+        .add-to-cart {
+            background-color:aqua;
+            /* width: 100px; */
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 5px 1px;
+        }
+        .buy-now{
+            background-color:lawngreen;
+            width: 100px;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 5px 1px;
+        }
+        .navbar-brand {
+        font-size: 35px;
+        margin-left: 25px;
+    }
+
+    .d-flex input {
+        width: 550px;
+        position: relative;
+        left: -280px;
+    }
+    body {
+            font-family: Arial, sans-serif;
+            background-color:rgb(230, 204, 62);
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* gap: 150px; */
+            row-gap:50px;
+            column-gap: 150px;
+            margin-left: 40px;
+           
+
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height:25em;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .card button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .card button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+      background-color:brown;
+      color: #fff;
+      padding: 40px 0;
+    }
+    footer .social-icons a {
+      color: #fff;
+      margin: 0 15px;
+      font-size: 30px;
+      transition: color 0.3s;
+    }
+    footer .social-icons a:hover {
+      color: #f8b400;
+    }
+    footer .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+      transition: color 0.3s;
+    }
+    footer .footer-links a:hover {
+      color: #fff;
+    }
+    .items img{
+       border-radius:10px;
+    }
+    
+    /* Mobile (small screens) */
+    @media (max-width: 576px) {
+      .details_one img {
+        width: 270px !important;
+        height: 280px;
+      
+      }
+      .details_one{
+        flex-wrap: wrap;
+      }
+      .zoom img{
+        width: 20px !important;
+        height: 20px;
+        
+      }
+
+
+    }
+
+    /* Tablet (medium screens) */
+    @media (min-width: 577px) and (max-width: 768px) {
+      .details_one img {
+        width: 470px !important;
+        height: 380px;
+      
+      }
+      .details_one{
+        flex-wrap: wrap;
+      }
+      .zoom img{
+        width: 20px !important;
+        height: 20px;
+        
+      }
+    }
+
+    /* Large mobile and small laptops */
+    @media (min-width: 769px) and (max-width: 992px) {
+      .details_one img {
+        width: 670px !important;
+        height: 380px;
+      
+      }
+      .details_one{
+        flex-wrap: wrap;
+      }
+      .zoom img{
+        width: 20px !important;
+        height: 20px;
+        
+      }
+    }
+        /* Button styling */
+        .div1 {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Header styling */
+    .div2 {
+      margin-bottom: 20px;
+    }
+
+    /* Modal overlay styling */
+    .div3 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      z-index: 10;
+    }
+
+    /* Modal content box styling */
+    .div4 {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      display: none;
+      z-index: 20;
+      text-align: left;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    /* Input fields styling */
+    .div5, .div6 {
+      width: calc(100% - 20px);
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Confirm order button styling */
+    .div7 {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    
+
+    </style>
+</head>
+
+<body>
+
+  <div id="overlay" class="div3"></div>
+  <div id="orderModal" class="div4">
+    <h2 id="pickleName" style="  text-align: center; font-family: Arial, sans-serif;">Order Pickle</h2>
+    <p>Enter quantity (in Kg):</p>
+    <input type="number" id="quantityInput" class="div5" placeholder="1" min="1">
+    <p>Enter your address:</p>
+    <input type="text" id="addressInput" class="div6" placeholder="Your full address">
+    <button onclick="placeOrder()" class="div7">Confirm Order</button>
+  </div>
+
+    <nav class="navbar navbar-expand-lg"
+    style="background-color:brown; height: 80px; position: sticky; top: 0; z-index: 1050; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+            style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); font-weight: bold;">𝕾𝖗𝖎𝖓𝖎𝖛𝖆𝖘𝖆
+            𝖋𝖔𝖔𝖉𝖘</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav" style="padding-left: 70px;" >
+                <li class="nav-item" style="padding: 10px;">
+                    <a class="nav-link active" aria-current="page" href="#"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">Home</a>
+                </li> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="nav-item" style="padding: 10px;">
+                    <a class="nav-link" href="#vegmain"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">Shop
+                        Now</a>
+                </li>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="nav-item" style="padding: 10px;">
+                    <a class="nav-link" href="#"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">About
+                        Us</a>
+                </li>
+                <li class="nav-item" style="padding: 10px; width:50px;">
+                    <a class="nav-link" href="#"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;"><i style="font-size:27px; padding-left: 19em;" class="fa-solid fa-cart-shopping" onclick="homecart()" ></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="main">
+    <section>
+        <h1 style="text-shadow: 0px 0px 2px;">Here Some We Provided NON-VEG PICKLES</h1>
+        <div class="card-container">
+            <!-- Chicken Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/08/5cc6b9d7-f80b-450e-b406-ff72be30af86.jpg" height="210px" alt="Chicken Pickle">
+                <h3>Chicken Pickle</h3>
+                <p>A delicious and spicy chicken pickle, perfect for meat lovers.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Mutton Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2023/06/Image-50-scaled.jpeg" style="height:190px" alt="Mutton Pickle">
+                <h3>Mutton Pickle</h3>
+                <p>A mouth-watering and rich mutton pickle, full of bold flavors.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Prawns Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/02/Image-57-scaled.jpeg" style="height:250px" alt="Prawns Pickle">
+                <h3>Prawns Pickle</h3>
+                <p>A tangy and spicy prawns pickle that pairs perfectly with rice.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Fish Pickle -->
+            <div class="card">
+                <img src="https://cdn.shopify.com/s/files/1/0270/2981/products/Korameenu-Fish-Pickle_1024x1024.jpg?v=1672578950" alt="Fish Pickle">
+                <h3>Fish Pickle</h3>
+                <p>A flavorful fish pickle with a tangy and spicy twist.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Nethalu Pickle -->
+            <div class="card">
+                <img src="https://www.indiansbasket.com/media/catalog/product/cache/1/thumbnail/600x550/4e89f566c77e51811b335fb935b6cdd7/n/e/nethallu.png" alt="Nethalu Pickle">
+                <h3>Nethalu Pickle</h3>
+                <p>A traditional nethalu pickle with an authentic coastal flavor.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Egg Pickle -->
+            <div class="card">
+                <img src="https://mirchi.com/os/cdn/content/images/egg%20pickle%20vr%20milky%20mushrooms_medium_0349645.webp" alt="Egg Pickle">
+                <h3>Egg Pickle</h3>
+                <p>A unique and spicy egg pickle that’s sure to delight your taste buds.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+ <!-- Chicken Pickle -->
+<div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="chicken" class="details">
+    <div class="details_one">
+        <img src="https://preview.redd.it/6gy9vbhsptd41.jpg?width=640&crop=smart&auto=webp&s=b7bad3fb2ec2618289bc15ff9bdcf40529798cd0" style="width: 450px;" alt="Chicken Pickle" id="chickenimage">
+        <div class="details-content">
+            <h2>Chicken Pickle</h2>
+            <p><strong>Description:</strong> A spicy and flavorful chicken pickle loved by meat enthusiasts.</p>
+            <p><strong>Ingredients:</strong> Chicken, Oil, Spices, Garlic, Salt</p>
+            <p><strong>Weight:</strong>1KG</p>
+            <p id="chickenprice"><strong>Price:</strong> ₹600</p>
+            <button class="add-to-cart" onclick="addtocartchicken()">Add to Cart</button>
+            <button class="buy-now" onclick="openOrderModal('CHICKEN PICKLE', 600)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+    <section>
+        <h1 style="text-shadow: 0px 0px 2px;">You may aslo like</h1>
+        <div class="card-container">
+            <!-- Chicken Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/08/5cc6b9d7-f80b-450e-b406-ff72be30af86.jpg" style="height: 210px;" alt="Chicken Pickle">
+                <h3>Chicken Pickle</h3>
+                <p>A delicious and spicy chicken pickle, perfect for meat lovers.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Mutton Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2023/06/Image-50-scaled.jpeg" style="height:190px" alt="Mutton Pickle">
+                <h3>Mutton Pickle</h3>
+                <p>A mouth-watering and rich mutton pickle, full of bold flavors.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Prawns Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/02/Image-57-scaled.jpeg" style="height:250px" alt="Prawns Pickle">
+                <h3>Prawns Pickle</h3>
+                <p>A tangy and spicy prawns pickle that pairs perfectly with rice.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Fish Pickle -->
+            <div class="card">
+                <img src="https://cdn.shopify.com/s/files/1/0270/2981/products/Korameenu-Fish-Pickle_1024x1024.jpg?v=1672578950" alt="Fish Pickle">
+                <h3>Fish Pickle</h3>
+                <p>A flavorful fish pickle with a tangy and spicy twist.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Nethalu Pickle -->
+            <div class="card">
+                <img src="https://www.indiansbasket.com/media/catalog/product/cache/1/thumbnail/600x550/4e89f566c77e51811b335fb935b6cdd7/n/e/nethallu.png" alt="Nethalu Pickle">
+                <h3>Nethalu Pickle</h3>
+                <p>A traditional nethalu pickle with an authentic coastal flavor.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Egg Pickle -->
+            <div class="card">
+                <img src="https://mirchi.com/os/cdn/content/images/egg%20pickle%20vr%20milky%20mushrooms_medium_0349645.webp" alt="Egg Pickle">
+                <h3>Egg Pickle</h3>
+                <p>A unique and spicy egg pickle that’s sure to delight your taste buds.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    
+    
+</div>
+
+<!-- Mutton Pickle -->
+<div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="mutton" class="details">
+    <div class="details_one">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2022/12/AW/FG/GJ/100739027/mutton-pickle-1000x1000.jpg"Mutton Pickle" id="muttonimg">
+        <div class="details-content">
+            <h2>Mutton Pickle</h2>
+            <p><strong>Description:</strong> A rich and spicy mutton pickle packed with authentic flavors.</p>
+            <p><strong>Ingredients:</strong> Mutton, Oil, Spices, Garlic, Salt</p>
+            <p><strong>Weight:</strong> 1kg</p>
+            <p id="muttonprice"><strong >Price:</strong>₹900</p>
+            <button class="add-to-cart" onclick="addtocartmutton()">Add to Cart</button>
+            <button class="buy-now" onclick="openOrderModal('MUTTON PICKLE', 900)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+        
+    </div>
+    <section>
+        <h1 style="text-shadow: 0px 0px 2px;">You may aslo like</h1>
+        <div class="card-container">
+            <!-- Chicken Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/08/5cc6b9d7-f80b-450e-b406-ff72be30af86.jpg" style="height: 210px;" alt="Chicken Pickle">
+                <h3>Chicken Pickle</h3>
+                <p>A delicious and spicy chicken pickle, perfect for meat lovers.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Mutton Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2023/06/Image-50-scaled.jpeg" style="height:190px" alt="Mutton Pickle">
+                <h3>Mutton Pickle</h3>
+                <p>A mouth-watering and rich mutton pickle, full of bold flavors.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Prawns Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/02/Image-57-scaled.jpeg" style="height:250px" alt="Prawns Pickle">
+                <h3>Prawns Pickle</h3>
+                <p>A tangy and spicy prawns pickle that pairs perfectly with rice.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Fish Pickle -->
+            <div class="card">
+                <img src="https://cdn.shopify.com/s/files/1/0270/2981/products/Korameenu-Fish-Pickle_1024x1024.jpg?v=1672578950" alt="Fish Pickle">
+                <h3>Fish Pickle</h3>
+                <p>A flavorful fish pickle with a tangy and spicy twist.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Nethalu Pickle -->
+            <div class="card">
+                <img src="https://www.indiansbasket.com/media/catalog/product/cache/1/thumbnail/600x550/4e89f566c77e51811b335fb935b6cdd7/n/e/nethallu.png" alt="Nethalu Pickle">
+                <h3>Nethalu Pickle</h3>
+                <p>A traditional nethalu pickle with an authentic coastal flavor.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Egg Pickle -->
+            <div class="card">
+                <img src="https://mirchi.com/os/cdn/content/images/egg%20pickle%20vr%20milky%20mushrooms_medium_0349645.webp" alt="Egg Pickle">
+                <h3>Egg Pickle</h3>
+                <p>A unique and spicy egg pickle that’s sure to delight your taste buds.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    
+</div>
+
+<!-- Prawns Pickle -->
+<div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="prawns" class="details">
+    <div class="details_one">
+        <img src="http://xantilicious.com/wp-content/uploads/2016/01/IMG_0982.jpg" style="width: 600px;" alt="Prawns Pickle" id="prawansimg">
+        <div class="details-content">
+            <h2>Prawns Pickle</h2>
+            <p><strong>Description:</strong> A tangy and spicy prawns pickle that complements every meal.</p>
+            <p><strong>Ingredients:</strong> Prawns, Oil, Spices, Garlic, Salt</p>
+            <p><strong>Weight:</strong>1kg</p>
+            <p id="prawansprice" ><strong>Price:</strong> ₹900</p>
+            <button class="add-to-cart" onclick="addtocartprawns()">Add to Cart</button>
+            <button class="buy-now" onclick="openOrderModal('PRAWNS PICKLE', 900)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+    <section>
+        <h1 style="text-shadow: 0px 0px 2px;">You may aslo like</h1>
+        <div class="card-container">
+            <!-- Chicken Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/08/5cc6b9d7-f80b-450e-b406-ff72be30af86.jpg" style="height: 210px;" alt="Chicken Pickle">
+                <h3>Chicken Pickle</h3>
+                <p>A delicious and spicy chicken pickle, perfect for meat lovers.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Mutton Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2023/06/Image-50-scaled.jpeg" style="height:190px" alt="Mutton Pickle">
+                <h3>Mutton Pickle</h3>
+                <p>A mouth-watering and rich mutton pickle, full of bold flavors.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Prawns Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/02/Image-57-scaled.jpeg" style="height:250px" alt="Prawns Pickle">
+                <h3>Prawns Pickle</h3>
+                <p>A tangy and spicy prawns pickle that pairs perfectly with rice.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Fish Pickle -->
+            <div class="card">
+                <img src="https://cdn.shopify.com/s/files/1/0270/2981/products/Korameenu-Fish-Pickle_1024x1024.jpg?v=1672578950" alt="Fish Pickle">
+                <h3>Fish Pickle</h3>
+                <p>A flavorful fish pickle with a tangy and spicy twist.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Nethalu Pickle -->
+            <div class="card">
+                <img src="https://www.indiansbasket.com/media/catalog/product/cache/1/thumbnail/600x550/4e89f566c77e51811b335fb935b6cdd7/n/e/nethallu.png" alt="Nethalu Pickle">
+                <h3>Nethalu Pickle</h3>
+                <p>A traditional nethalu pickle with an authentic coastal flavor.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Egg Pickle -->
+            <div class="card">
+                <img src="https://mirchi.com/os/cdn/content/images/egg%20pickle%20vr%20milky%20mushrooms_medium_0349645.webp" alt="Egg Pickle">
+                <h3>Egg Pickle</h3>
+                <p>A unique and spicy egg pickle that’s sure to delight your taste buds.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+<!-- Fish Pickle -->
+<div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="fish" class="details">
+    <div class="details_one">
+        <img src="https://i.ytimg.com/vi/Ot7UoCk7LwI/maxresdefault.jpg" style="width: 600px;"  alt="Fish Pickle" id="fishimg">
+        <div class="details-content">
+            <h2>Fish Pickle</h2>
+            <p><strong>Description:</strong> A delicious and spicy fish pickle made with premium spices.</p>
+            <p><strong>Ingredients:</strong> Fish, Oil, Spices, Garlic, Salt</p>
+            <p><strong>Weight:</strong> 1kg</p>
+            <p id="fishprice"><strong>Price:</strong> ₹900</p>
+            <button class="add-to-cart" onclick="addtocartfish()">Add to Cart</button>
+            <button class="buy-now" onclick="openOrderModal('FISH PICKLE', 900)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+    <section>
+        <h1 style="text-shadow: 0px 0px 2px;">You may aslo like</h1>
+        <div class="card-container">
+            <!-- Chicken Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/08/5cc6b9d7-f80b-450e-b406-ff72be30af86.jpg" style="height: 210px;" alt="Chicken Pickle">
+                <h3>Chicken Pickle</h3>
+                <p>A delicious and spicy chicken pickle, perfect for meat lovers.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Mutton Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2023/06/Image-50-scaled.jpeg" style="height:190px" alt="Mutton Pickle">
+                <h3>Mutton Pickle</h3>
+                <p>A mouth-watering and rich mutton pickle, full of bold flavors.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Prawns Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/02/Image-57-scaled.jpeg" style="height:250px" alt="Prawns Pickle">
+                <h3>Prawns Pickle</h3>
+                <p>A tangy and spicy prawns pickle that pairs perfectly with rice.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Fish Pickle -->
+            <div class="card">
+                <img src="https://cdn.shopify.com/s/files/1/0270/2981/products/Korameenu-Fish-Pickle_1024x1024.jpg?v=1672578950" alt="Fish Pickle">
+                <h3>Fish Pickle</h3>
+                <p>A flavorful fish pickle with a tangy and spicy twist.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Nethalu Pickle -->
+            <div class="card">
+                <img src="https://www.indiansbasket.com/media/catalog/product/cache/1/thumbnail/600x550/4e89f566c77e51811b335fb935b6cdd7/n/e/nethallu.png" alt="Nethalu Pickle">
+                <h3>Nethalu Pickle</h3>
+                <p>A traditional nethalu pickle with an authentic coastal flavor.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Egg Pickle -->
+            <div class="card">
+                <img src="https://mirchi.com/os/cdn/content/images/egg%20pickle%20vr%20milky%20mushrooms_medium_0349645.webp" alt="Egg Pickle">
+                <h3>Egg Pickle</h3>
+                <p>A unique and spicy egg pickle that’s sure to delight your taste buds.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+<!-- Nethalu Pickle -->
+<div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="nethalu" class="details">
+    <div class="details_one">
+        <img src="https://sp.rmbl.ws/s8/1/F/o/I/L/FoILb.qR4e-small-Fish-Pickle-Kerala-Sardine-.jpg" style="width: 600px;" alt="Nethalu Pickle" id="Nethalluimg">
+        <div class="details-content">
+            <h2>Nethalu Pickle</h2>
+            <p><strong>Description:</strong> A traditional nethalu (anchovy) pickle with bold flavors.</p>
+            <p><strong>Ingredients:</strong> Nethalu, Oil, Spices, Garlic, Salt</p>
+            <p><strong>Weight:</strong> 1kg</p>
+            <p id="Nethalluprice"><strong>Price:</strong> ₹900</p>
+            <button class="add-to-cart" onclick="addtocartnethallu()">Add to Cart</button>
+            <button class="buy-now" onclick="openOrderModal('NETHALU PICKLE', 900)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+    <section>
+        <h1 style="text-shadow: 0px 0px 2px;">You may aslo like</h1>
+        <div class="card-container">
+            <!-- Chicken Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/08/5cc6b9d7-f80b-450e-b406-ff72be30af86.jpg" style="height: 210px;" alt="Chicken Pickle">
+                <h3>Chicken Pickle</h3>
+                <p>A delicious and spicy chicken pickle, perfect for meat lovers.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Mutton Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2023/06/Image-50-scaled.jpeg" style="height:190px" alt="Mutton Pickle">
+                <h3>Mutton Pickle</h3>
+                <p>A mouth-watering and rich mutton pickle, full of bold flavors.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Prawns Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/02/Image-57-scaled.jpeg" style="height:250px" alt="Prawns Pickle">
+                <h3>Prawns Pickle</h3>
+                <p>A tangy and spicy prawns pickle that pairs perfectly with rice.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Fish Pickle -->
+            <div class="card">
+                <img src="https://cdn.shopify.com/s/files/1/0270/2981/products/Korameenu-Fish-Pickle_1024x1024.jpg?v=1672578950" alt="Fish Pickle">
+                <h3>Fish Pickle</h3>
+                <p>A flavorful fish pickle with a tangy and spicy twist.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Nethalu Pickle -->
+            <div class="card">
+                <img src="https://www.indiansbasket.com/media/catalog/product/cache/1/thumbnail/600x550/4e89f566c77e51811b335fb935b6cdd7/n/e/nethallu.png" alt="Nethalu Pickle">
+                <h3>Nethalu Pickle</h3>
+                <p>A traditional nethalu pickle with an authentic coastal flavor.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Egg Pickle -->
+            <div class="card">
+                <img src="https://mirchi.com/os/cdn/content/images/egg%20pickle%20vr%20milky%20mushrooms_medium_0349645.webp" alt="Egg Pickle">
+                <h3>Egg Pickle</h3>
+                <p>A unique and spicy egg pickle that’s sure to delight your taste buds.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+<!-- Egg Pickle -->
+<div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="egg" class="details">
+    <div class="details_one">
+        <img src="http://4.bp.blogspot.com/_Y9fEWs0C0qQ/R2es_VXxBcI/AAAAAAAABhw/gMexYTjYsmA/s400/egg+pickle.bmp" alt="Egg Pickle" id="eggimg">
+        <div class="details-content">
+            <h2>Egg Pickle</h2>
+            <p><strong>Description:</strong> A unique egg pickle infused with aromatic spices.</p>
+            <p><strong>Ingredients:</strong> Eggs, Oil, Spices, Garlic, Salt</p>
+            <p><strong>Weight:</strong> 1kg</p>
+            <p id="eggprice"><strong>Price:</strong> ₹300</p>
+            <button class="add-to-cart" onclick="addtocartegg()">Add to Cart</button>
+            <button class="buy-now" onclick="openOrderModal('EGG PICKLE', 300)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+    <section>
+        <h1 style="text-shadow: 0px 0px 2px;">You may aslo like</h1>
+        <div class="card-container">
+            <!-- Chicken Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/08/5cc6b9d7-f80b-450e-b406-ff72be30af86.jpg" style="height: 210px;" alt="Chicken Pickle">
+                <h3>Chicken Pickle</h3>
+                <p>A delicious and spicy chicken pickle, perfect for meat lovers.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Mutton Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2023/06/Image-50-scaled.jpeg" style="height:190px" alt="Mutton Pickle">
+                <h3>Mutton Pickle</h3>
+                <p>A mouth-watering and rich mutton pickle, full of bold flavors.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Prawns Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/02/Image-57-scaled.jpeg" style="height:250px" alt="Prawns Pickle">
+                <h3>Prawns Pickle</h3>
+                <p>A tangy and spicy prawns pickle that pairs perfectly with rice.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Fish Pickle -->
+            <div class="card">
+                <img src="https://cdn.shopify.com/s/files/1/0270/2981/products/Korameenu-Fish-Pickle_1024x1024.jpg?v=1672578950" alt="Fish Pickle">
+                <h3>Fish Pickle</h3>
+                <p>A flavorful fish pickle with a tangy and spicy twist.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Nethalu Pickle -->
+            <div class="card">
+                <img src="https://www.indiansbasket.com/media/catalog/product/cache/1/thumbnail/600x550/4e89f566c77e51811b335fb935b6cdd7/n/e/nethallu.png" alt="Nethalu Pickle">
+                <h3>Nethalu Pickle</h3>
+                <p>A traditional nethalu pickle with an authentic coastal flavor.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Egg Pickle -->
+            <div class="card">
+                <img src="https://mirchi.com/os/cdn/content/images/egg%20pickle%20vr%20milky%20mushrooms_medium_0349645.webp" alt="Egg Pickle">
+                <h3>Egg Pickle</h3>
+                <p>A unique and spicy egg pickle that’s sure to delight your taste buds.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+        </div>
+    </section>  
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+
+</div>
+
+
+
+
+
+<script>
+     let vegmain = document.getElementsByClassName('ach')
+        let vegdis = document.getElementById('main')
+        let vegsub = document.getElementsByClassName("details")
+        let back = document.getElementsByClassName('back')
+        for (let i = 0; i < vegmain.length; i++) {
+            vegmain[i].onclick = function () {
+                vegdis.style.display = 'none'     
+                vegsub[i].style.display = 'block'
+                back[i].onclick = function backToMenu() {
+                    vegdis.style.display = 'block'
+                    vegsub[i].style.display = 'none'
+                }
+            }
+        }
+
+
+
+    function addtocartchicken(){
+      alert("Chicken Pickle added to your cart")
+      let img=document.getElementById('chickenimage')
+      let price=document.getElementById("chickenprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Chicken Pickle", "quantity":1 ,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+    function addtocartmutton(){
+      alert("Mutton Pickle added to your cart")
+      let img=document.getElementById('muttonimg')
+      let price=document.getElementById("muttonprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Mutton Pickle","quantity":1,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+    function addtocartprawns(){
+      alert("Prawns Pickle added to your cart")
+      let img=document.getElementById('prawansimg')
+      let price=document.getElementById("prawansprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Prawans Pickle","quantity":1,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+    function addtocartfish(){
+      alert("Fish Pickle added to your cart")
+      let img=document.getElementById('fishimg')
+      let price=document.getElementById("fishprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Fish Pickle","quantity":1,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+    function addtocartnethallu(){
+      alert("Nethallu Pickle added to your cart")
+      let img=document.getElementById('Nethalluimg')
+      let price=document.getElementById("Nethalluprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Nethallu Pickle","quantity":1,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+    function addtocartegg(){
+      alert("Egg Pickle added to your cart")
+      let img=document.getElementById('eggimg')
+      let price=document.getElementById("eggprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Egg Pickle","quantity":1,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+   
+    function homecart(){
+    window.location.href="cart.html"
+
+}
+
+
+let selectedPickle = '';
+  let picklePrice = 0;
+
+  function openOrderModal(pickleName, price) {
+    selectedPickle = pickleName;
+    picklePrice = price;
+    document.getElementById('pickleName').innerText = `Order ${pickleName}`;
+    document.getElementById('quantityInput').value = '';
+    document.getElementById('addressInput').value = '';
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('orderModal').style.display = 'block';
+  }
+
+  function closeOrderModal() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('orderModal').style.display = 'none';
+  }
+
+  function placeOrder() {
+    const phoneNumber = '9515174064';
+    const quantity = parseFloat(document.getElementById('quantityInput').value);
+    const address = document.getElementById('addressInput').value.trim();
+
+    if (!quantity || quantity <= 0) {
+      alert('Invalid quantity. Please enter a valid number.');
+      return;
+    }
+
+    if (!address) {
+      alert('Address is required to proceed!');
+      return;
+    }
+
+    const totalPrice = quantity * picklePrice;
+    const orderId = 'CP' + Math.floor(100000 + Math.random() * 900000);
+
+    const message = `𝗛𝗲𝗹𝗹𝗼,\n𝗜 𝘄𝗼𝘂𝗹𝗱 𝗹𝗶𝗸𝗲 𝘁𝗼 𝗼𝗿𝗱𝗲𝗿 *${selectedPickle}*.\n𝗢𝗿𝗱𝗲𝗿 𝗜𝗗: ${orderId}\n𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆: ${quantity}kg\n𝗧𝗼𝘁𝗮𝗹 𝗣𝗿𝗶𝗰𝗲: ₹${totalPrice}\n𝗗𝗲𝗹𝗶𝘃𝗲𝗿𝘆 𝗔𝗱𝗱𝗿𝗲𝘀𝘀: ${address}\n𝗣𝗹𝗲𝗮𝘀𝗲 𝗰𝗼𝗻𝗳𝗶𝗿𝗺 𝗺𝘆 𝗼𝗿𝗱𝗲𝗿\n𝗡𝗼𝘁𝗲:\n𝗣𝗹𝗲𝗮𝘀𝗲 𝗱𝗼 𝗻𝗼𝘁 𝗺𝗼𝗱𝗶𝗳𝘆 𝘁𝗵𝗶𝘀 𝗺𝗲𝘀𝘀𝗮𝗴𝗲.\n𝗬𝗼𝘂𝗿 𝗽𝗿𝗶𝗰𝗲 𝗱𝗲𝗽𝗲𝗻𝗱𝘀 𝗼𝗻 𝘆𝗼𝘂𝗿 𝗾𝘂𝗮𝗻𝘁𝗶𝘁𝘆.\n\n*𝗧𝗵𝗮𝗻𝗸 𝘆𝗼𝘂 𝗳𝗼𝗿 𝗼𝗿𝗱𝗲𝗿𝗶𝗻𝗴!* `;
+
+    const encodedMessage = encodeURIComponent(message);
+    const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.location.href = url;
+  }
+
+  document.getElementById('overlay').addEventListener('click', closeOrderModal);
+
+</script>
+
+</body>
+
+</html>

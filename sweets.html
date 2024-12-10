@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Document</title>
+    <style>
+
+        .details_one {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            width: 80%;
+            margin-top: -3px;
+        }
+
+        .details img {
+            width: 500px;
+            height: 500px;
+            border-radius: 10px;
+            margin-right: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .details-content h2{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 44px;
+            text-shadow: 0px 0px 2px;
+        }
+        .details-content p{
+                 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                 font-size: 20px;
+        }
+        .add-to-cart {
+            background-color:aqua;
+            /* width: 100px; */
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 5px 1px;
+        }
+        .buy-now{
+            background-color:lawngreen;
+            width: 100px;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 5px 1px;
+        }
+        .navbar-brand {
+        font-size: 35px;
+        margin-left: 25px;
+    }
+
+    .d-flex input {
+        width: 550px;
+        position: relative;
+        left: -280px;
+    }
+    body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(230, 204, 62);
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* gap: 150px; */
+            row-gap:50px;
+            column-gap: 150px;
+            margin-left: 40px;
+           
+
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height:25em;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .card button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .card button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+      background-color:brown;
+      color: #fff;
+      padding: 40px 0;
+    }
+    footer .social-icons a {
+      color: #fff;
+      margin: 0 15px;
+      font-size: 30px;
+      transition: color 0.3s;
+    }
+    footer .social-icons a:hover {
+      color: #f8b400;
+    }
+    footer .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+      transition: color 0.3s;
+    }
+    footer .footer-links a:hover {
+      color: #fff;
+    }
+    .items img{
+       border-radius:10px;
+    }
+    
+    /* Mobile (small screens) */
+    @media (max-width: 576px) {
+      .details_one img {
+        width: 270px !important;
+        height: 280px;
+      
+      }
+      .details_one{
+        flex-wrap: wrap;
+      }
+      .zoom img{
+        width: 20px !important;
+        height: 20px;
+        
+      }
+
+
+    }
+
+    /* Tablet (medium screens) */
+    @media (min-width: 577px) and (max-width: 768px) {
+      .details_one img {
+        width: 470px !important;
+        height: 380px;
+      
+      }
+      .details_one{
+        flex-wrap: wrap;
+      }
+      .zoom img{
+        width: 20px !important;
+        height: 20px;
+        
+      }
+    }
+
+    /* Large mobile and small laptops */
+    @media (min-width: 769px) and (max-width: 992px) {
+      .details_one img {
+        width: 670px !important;
+        height: 380px;
+      
+      }
+      .details_one{
+        flex-wrap: wrap;
+      }
+      .zoom img{
+        width: 20px !important;
+        height: 20px;
+        
+      }
+    }
+            /* Button styling */
+            .div1 {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Header styling */
+    .div2 {
+      margin-bottom: 20px;
+    }
+
+    /* Modal overlay styling */
+    .div3 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      z-index: 10;
+    }
+
+    /* Modal content box styling */
+    .div4 {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      display: none;
+      z-index: 20;
+      text-align: left;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    /* Input fields styling */
+    .div5, .div6 {
+      width: calc(100% - 20px);
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Confirm order button styling */
+    .div7 {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    </style>
+</head>
+
+<body>
+
+  <div id="overlay" class="div3"></div>
+  <div id="orderModal" class="div4">
+    <h2 id="pickleName" style="  text-align: center; font-family: Arial, sans-serif;">Order Pickle</h2>
+    <p>Enter quantity (in Kg):</p>
+    <input type="number" id="quantityInput" class="div5" placeholder="1" min="1">
+    <p>Enter your address:</p>
+    <input type="text" id="addressInput" class="div6" placeholder="Your full address">
+    <button onclick="placeOrder()" class="div7">Confirm Order</button>
+  </div>
+
+    <nav class="navbar navbar-expand-lg"
+    style="background-color:brown; height: 80px; position: sticky; top: 0; z-index: 1050; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+            style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); font-weight: bold;">𝕾𝖗𝖎𝖓𝖎𝖛𝖆𝖘𝖆
+            𝖋𝖔𝖔𝖉𝖘</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav" style="padding-left: 70px;" >
+                <li class="nav-item" style="padding: 10px;">
+                    <a class="nav-link active" aria-current="page" href="#"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">Home</a>
+                </li> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="nav-item" style="padding: 10px;">
+                    <a class="nav-link" href="#vegmain"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">Shop
+                        Now</a>
+                </li>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="nav-item" style="padding: 10px;">
+                    <a class="nav-link" href="#"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">About
+                        Us</a>
+                </li>
+                <li class="nav-item" style="padding: 10px; width:50px;">
+                    <a class="nav-link" href="#"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;"><i style="font-size:27px; padding-left: 19em;" class="fa-solid fa-cart-shopping" onclick="homecart()" ></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="main">
+    <section>
+        <h1 style="text-shadow: 0px 0px 2px;">Here Some We Provided SWEETS</h1>
+        <div class="card-container">
+            <!-- Laddu -->
+            <div class="card">
+                <img src="https://shreemsweetsandbakery.com/wp-content/uploads/2020/11/special-laddu.jpg" style="height:180px" alt="Laddu">
+                <h3>Laddu</h3>
+                <p>A rich and traditional sweet made with ghee, sugar, and flour.</p>
+                <button class="ach" onclick="buyladdu()">Shop Now</button>
+            </div>
+    
+            <!-- Kaju Katli -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.k3VyyUlePLIYlMurUmFgpgHaHa&pid=Api&P=0&h=180" height="210px" alt="Kaju Katli">
+                <h3>Kaju Katli</h3>
+                <p>A delightful cashew-based sweet with a thin silver coating.</p>
+                <button class="ach" onclick="buykajukatli()">Shop Now</button>
+            </div>
+    
+            <!-- Badusha -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.W833MuDKgFA9HopEPK2_jQHaF7&pid=Api&P=0&h=180" height="210px" alt="Badusha">
+                <h3>Badusha</h3>
+                <p>A soft, flaky, and mildly sweet delicacy perfect for celebrations.</p>
+                <button class="ach" onclick="buybadusha()">Shop Now</button>
+            </div>
+    
+            <!-- Burfi -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2017/10/rava-burfi-recipe-1-500x500.jpg" height="210px" alt="Burfi">
+                <h3>Burfi</h3>
+                <p>A creamy milk-based sweet that melts in your mouth.</p>
+                <button class="ach" onclick="buyburfi()">Shop Now</button>
+            </div>
+    
+            <!-- Gulab Jamun -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/09/gulab-jamun.jpg" height="210px" alt="Gulab Jamun">
+                <h3>Gulab Jamun</h3>
+                <p>Soft and spongy balls soaked in sugar syrup.</p>
+                <button class="ach" onclick="buygulabjamun()">Shop Now</button>
+            </div>
+    
+            <!-- Jalebi -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.6_AMDfjQM-tFWcY-qe-egQHaHa&pid=Api&P=0&h=180" height="210px" alt="Jalebi">
+                <h3>Jalebi</h3>
+                <p>Crispy and sugary spirals, a favorite festive treat.</p>
+                <button class="ach" onclick="buyjalebi()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+<!-- Laddu -->
+<div style="display: none; background-color:  rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="laddu" class="details">
+    <div class="details_one">
+        <img src="https://bombaysweets.in/cdn/shop/products/niceLadoo.png?v=1666085560" alt="Laddu" id="ladduimage">
+        <div class="details-content">
+            <h2>Laddu</h2>
+            <p><strong>Description:</strong> A classic Indian sweet made from gram flour and sugar, perfect for celebrations.</p>
+            <p><strong>Ingredients:</strong> Gram Flour, Ghee, Sugar, Cardamom</p>
+            <p><strong>Weight:</strong>1kg</p>
+            <p id="ladduprice"><strong>Price:</strong> ₹400</p>
+            <button class="add-to-cart" onclick="addtocartladdu()">Add to Cart</button>
+            <button class="buy-now" onclick="openOrderModal('LADDU', 400)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+    <section>
+        <h1 style="text-shadow: 0px 0px 2px;">You may also like</h1>
+        <div class="card-container">
+            <!-- Laddu -->
+            <div class="card">
+                <img src="https://shreemsweetsandbakery.com/wp-content/uploads/2020/11/special-laddu.jpg" style="height:180px" alt="Laddu">
+                <h3>Laddu</h3>
+                <p>A rich and traditional sweet made with ghee, sugar, and flour.</p>
+                <button class="ach" onclick="buyladdu()">Shop Now</button>
+            </div>
+    
+            <!-- Kaju Katli -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.k3VyyUlePLIYlMurUmFgpgHaHa&pid=Api&P=0&h=180" height="210px" alt="Kaju Katli">
+                <h3>Kaju Katli</h3>
+                <p>A delightful cashew-based sweet with a thin silver coating.</p>
+                <button class="ach" onclick="buykajukatli()">Shop Now</button>
+            </div>
+    
+            <!-- Badusha -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.W833MuDKgFA9HopEPK2_jQHaF7&pid=Api&P=0&h=180" height="210px" alt="Badusha">
+                <h3>Badusha</h3>
+                <p>A soft, flaky, and mildly sweet delicacy perfect for celebrations.</p>
+                <button class="ach" onclick="buybadusha()">Shop Now</button>
+            </div>
+    
+            <!-- Burfi -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2017/10/rava-burfi-recipe-1-500x500.jpg" height="210px" alt="Burfi">
+                <h3>Burfi</h3>
+                <p>A creamy milk-based sweet that melts in your mouth.</p>
+                <button class="ach" onclick="buyburfi()">Shop Now</button>
+            </div>
+    
+            <!-- Gulab Jamun -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/09/gulab-jamun.jpg" style="height: 210px;" alt="Gulab Jamun">
+                <h3>Gulab Jamun</h3>
+                <p>Soft and spongy balls soaked in sugar syrup.</p>
+                <button class="ach" onclick="buygulabjamun()">Shop Now</button>
+            </div>
+    
+            <!-- Jalebi -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.6_AMDfjQM-tFWcY-qe-egQHaHa&pid=Api&P=0&h=180" height="210px" alt="Jalebi">
+                <h3>Jalebi</h3>
+                <p>Crispy and sugary spirals, a favorite festive treat.</p>
+                <button class="ach" onclick="buyjalebi()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+<!-- Kajju Katli -->
+<div style="display: none; background-color:  rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="kajjukatli" class="details">
+    <div class="details_one">
+        <img src="https://adityasweets.com/wp-content/uploads/2018/09/KAJU-KATLI.jpg" alt="Kajju Katli" id="kajjukatliimg">
+        <div class="details-content">
+            <h2>Kajju Katli</h2>
+            <p><strong>Description:</strong> A rich and delicious cashew sweet, ideal for gifting and celebrations.</p>
+            <p><strong>Ingredients:</strong> Cashew, Sugar, Ghee</p>
+            <p><strong>Weight:</strong> 1kg</p>
+            <p id="kajjukatliprice"><strong>Price:</strong> ₹550</p>
+            <button class="add-to-cart" onclick="addtocartkajjukatli()">Add to Cart</button>
+            <button class="buy-now"  onclick="openOrderModal('KAJU-KATLI', 550)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+    <section>
+        <h1 style="text-shadow: 0px 0px 2px;">You may also like</h1>
+        <div class="card-container">
+            <!-- Laddu -->
+            <div class="card">
+                <img src="https://shreemsweetsandbakery.com/wp-content/uploads/2020/11/special-laddu.jpg" style="height:180px" alt="Laddu">
+                <h3>Laddu</h3>
+                <p>A rich and traditional sweet made with ghee, sugar, and flour.</p>
+                <button class="ach" onclick="buyladdu()">Shop Now</button>
+            </div>
+    
+            <!-- Kaju Katli -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.k3VyyUlePLIYlMurUmFgpgHaHa&pid=Api&P=0&h=180" height="210px" alt="Kaju Katli">
+                <h3>Kaju Katli</h3>
+                <p>A delightful cashew-based sweet with a thin silver coating.</p>
+                <button class="ach" onclick="buykajukatli()">Shop Now</button>
+            </div>
+    
+            <!-- Badusha -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.W833MuDKgFA9HopEPK2_jQHaF7&pid=Api&P=0&h=180" height="210px" alt="Badusha">
+                <h3>Badusha</h3>
+                <p>A soft, flaky, and mildly sweet delicacy perfect for celebrations.</p>
+                <button class="ach" onclick="buybadusha()">Shop Now</button>
+            </div>
+    
+            <!-- Burfi -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2017/10/rava-burfi-recipe-1-500x500.jpg" height="210px" alt="Burfi">
+                <h3>Burfi</h3>
+                <p>A creamy milk-based sweet that melts in your mouth.</p>
+                <button class="ach" onclick="buyburfi()">Shop Now</button>
+            </div>
+    
+            <!-- Gulab Jamun -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/09/gulab-jamun.jpg" style="height: 210px;" alt="Gulab Jamun">
+                <h3>Gulab Jamun</h3>
+                <p>Soft and spongy balls soaked in sugar syrup.</p>
+                <button class="ach" onclick="buygulabjamun()">Shop Now</button>
+            </div>
+    
+            <!-- Jalebi -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.6_AMDfjQM-tFWcY-qe-egQHaHa&pid=Api&P=0&h=180" height="210px" alt="Jalebi">
+                <h3>Jalebi</h3>
+                <p>Crispy and sugary spirals, a favorite festive treat.</p>
+                <button class="ach" onclick="buyjalebi()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+<!-- Badusha -->
+<div style="display: none; background-color:  rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="badusha" class="details">
+    <div class="details_one">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.KQ3S91nsgnuF83bygMKZkwHaHa&pid=Api&P=0&h=180" alt="Badusha" id="badushaimg">
+        <div class="details-content">
+            <h2>Badusha</h2>
+            <p><strong>Description:</strong> A flaky and sweet traditional treat, enjoyed across India.</p>
+            <p><strong>Ingredients:</strong> Maida, Sugar Syrup, Ghee</p>
+            <p><strong>Weight:</strong>1KG</p>
+            <p id="badushaprice"><strong>Price:</strong> ₹300</p>
+            <button class="add-to-cart" onclick="addtocartbadusha()">Add to Cart</button>
+            <button class="buy-now"  onclick="openOrderModal('BADUSHA', 300)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+    <section>
+        <h1 style="text-shadow: 0px 0px 2px;">You may also like</h1>
+        <div class="card-container">
+            <!-- Laddu -->
+            <div class="card">
+                <img src="https://shreemsweetsandbakery.com/wp-content/uploads/2020/11/special-laddu.jpg" style="height:180px" alt="Laddu">
+                <h3>Laddu</h3>
+                <p>A rich and traditional sweet made with ghee, sugar, and flour.</p>
+                <button class="ach" onclick="buyladdu()">Shop Now</button>
+            </div>
+    
+            <!-- Kaju Katli -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.k3VyyUlePLIYlMurUmFgpgHaHa&pid=Api&P=0&h=180" height="210px" alt="Kaju Katli">
+                <h3>Kaju Katli</h3>
+                <p>A delightful cashew-based sweet with a thin silver coating.</p>
+                <button class="ach" onclick="buykajukatli()">Shop Now</button>
+            </div>
+    
+            <!-- Badusha -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.W833MuDKgFA9HopEPK2_jQHaF7&pid=Api&P=0&h=180" height="210px" alt="Badusha">
+                <h3>Badusha</h3>
+                <p>A soft, flaky, and mildly sweet delicacy perfect for celebrations.</p>
+                <button class="ach" onclick="buybadusha()">Shop Now</button>
+            </div>
+    
+            <!-- Burfi -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2017/10/rava-burfi-recipe-1-500x500.jpg" height="210px" alt="Burfi">
+                <h3>Burfi</h3>
+                <p>A creamy milk-based sweet that melts in your mouth.</p>
+                <button class="ach" onclick="buyburfi()">Shop Now</button>
+            </div>
+    
+            <!-- Gulab Jamun -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/09/gulab-jamun.jpg" style="height: 210px;" alt="Gulab Jamun">
+                <h3>Gulab Jamun</h3>
+                <p>Soft and spongy balls soaked in sugar syrup.</p>
+                <button class="ach" onclick="buygulabjamun()">Shop Now</button>
+            </div>
+    
+            <!-- Jalebi -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.6_AMDfjQM-tFWcY-qe-egQHaHa&pid=Api&P=0&h=180" height="210px" alt="Jalebi">
+                <h3>Jalebi</h3>
+                <p>Crispy and sugary spirals, a favorite festive treat.</p>
+                <button class="ach" onclick="buyjalebi()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+<!-- Burfi -->
+<div style="display: none; background-color:  rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="burfi" class="details">
+    <div class="details_one">
+        <img src="http://srivishnusweets.com/wp-content/uploads/2017/10/Badam-Barfi.jpg" alt="Burfi" id="burfiimg">
+        <div class="details-content">
+            <h2>Burfi</h2>
+            <p><strong>Description:</strong> A soft and melt-in-your-mouth sweet made with milk solids.</p>
+            <p><strong>Ingredients:</strong> Milk, Sugar, Ghee</p>
+            <p><strong>Weight:</strong> 1kg</p>
+            <p id="burfiprice"><strong>Price:</strong> ₹500</p>
+            <button class="add-to-cart" onclick="addtocartburfi()">Add to Cart</button>
+            <button class="buy-now"  onclick="openOrderModal('BURFI', 500)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+    <section>
+        <h1 style="text-shadow: 0px 0px 2px;">You may also like</h1>
+        <div class="card-container">
+            <!-- Laddu -->
+            <div class="card">
+                <img src="https://shreemsweetsandbakery.com/wp-content/uploads/2020/11/special-laddu.jpg" style="height:180px" alt="Laddu">
+                <h3>Laddu</h3>
+                <p>A rich and traditional sweet made with ghee, sugar, and flour.</p>
+                <button class="ach" onclick="buyladdu()">Shop Now</button>
+            </div>
+    
+            <!-- Kaju Katli -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.k3VyyUlePLIYlMurUmFgpgHaHa&pid=Api&P=0&h=180" height="210px" alt="Kaju Katli">
+                <h3>Kaju Katli</h3>
+                <p>A delightful cashew-based sweet with a thin silver coating.</p>
+                <button class="ach" onclick="buykajukatli()">Shop Now</button>
+            </div>
+    
+            <!-- Badusha -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.W833MuDKgFA9HopEPK2_jQHaF7&pid=Api&P=0&h=180" height="210px" alt="Badusha">
+                <h3>Badusha</h3>
+                <p>A soft, flaky, and mildly sweet delicacy perfect for celebrations.</p>
+                <button class="ach" onclick="buybadusha()">Shop Now</button>
+            </div>
+    
+            <!-- Burfi -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2017/10/rava-burfi-recipe-1-500x500.jpg" height="210px" alt="Burfi">
+                <h3>Burfi</h3>
+                <p>A creamy milk-based sweet that melts in your mouth.</p>
+                <button class="ach" onclick="buyburfi()">Shop Now</button>
+            </div>
+    
+            <!-- Gulab Jamun -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/09/gulab-jamun.jpg" style="height: 210px;" alt="Gulab Jamun">
+                <h3>Gulab Jamun</h3>
+                <p>Soft and spongy balls soaked in sugar syrup.</p>
+                <button class="ach" onclick="buygulabjamun()">Shop Now</button>
+            </div>
+    
+            <!-- Jalebi -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.6_AMDfjQM-tFWcY-qe-egQHaHa&pid=Api&P=0&h=180" height="210px" alt="Jalebi">
+                <h3>Jalebi</h3>
+                <p>Crispy and sugary spirals, a favorite festive treat.</p>
+                <button class="ach" onclick="buyjalebi()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+<!-- Gulab Jamun -->
+<div style="display: none; background-color:  rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="gulabjamun" class="details">
+    <div class="details_one">
+        <img src="https://i0.wp.com/kalimirchbysmita.com/wp-content/uploads/2015/11/Gulab-Jamun-05.jpg?resize=1024%2C683" alt="Gulab Jamun" id="gulabjamunimg">
+        <div class="details-content">
+            <h2>Gulab Jamun</h2>
+            <p><strong>Description:</strong> Soft and syrupy milk-based dumplings, a favorite dessert for all occasions.</p>
+            <p><strong>Ingredients:</strong> Milk Powder, Sugar Syrup, Ghee</p>
+            <p><strong>Weight:</strong> 500g</p>
+            <p id="gulabjamunprice"><strong>Price:</strong> ₹300</p>
+            <button class="add-to-cart" onclick="addtocartgulabjamun()">Add to Cart</button>
+            <button class="buy-now"  onclick="openOrderModal('GULAB-JAMUN', 500)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+    <section>
+        <h1 style="text-shadow: 0px 0px 2px;">You may also like</h1>
+        <div class="card-container">
+            <!-- Laddu -->
+            <div class="card">
+                <img src="https://shreemsweetsandbakery.com/wp-content/uploads/2020/11/special-laddu.jpg" style="height:180px" alt="Laddu">
+                <h3>Laddu</h3>
+                <p>A rich and traditional sweet made with ghee, sugar, and flour.</p>
+                <button class="ach" onclick="buyladdu()">Shop Now</button>
+            </div>
+    
+            <!-- Kaju Katli -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.k3VyyUlePLIYlMurUmFgpgHaHa&pid=Api&P=0&h=180" height="210px" alt="Kaju Katli">
+                <h3>Kaju Katli</h3>
+                <p>A delightful cashew-based sweet with a thin silver coating.</p>
+                <button class="ach" onclick="buykajukatli()">Shop Now</button>
+            </div>
+    
+            <!-- Badusha -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.W833MuDKgFA9HopEPK2_jQHaF7&pid=Api&P=0&h=180" height="210px" alt="Badusha">
+                <h3>Badusha</h3>
+                <p>A soft, flaky, and mildly sweet delicacy perfect for celebrations.</p>
+                <button class="ach" onclick="buybadusha()">Shop Now</button>
+            </div>
+    
+            <!-- Burfi -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2017/10/rava-burfi-recipe-1-500x500.jpg" height="210px" alt="Burfi">
+                <h3>Burfi</h3>
+                <p>A creamy milk-based sweet that melts in your mouth.</p>
+                <button class="ach" onclick="buyburfi()">Shop Now</button>
+            </div>
+    
+            <!-- Gulab Jamun -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/09/gulab-jamun.jpg" style="height: 210px;" alt="Gulab Jamun">
+                <h3>Gulab Jamun</h3>
+                <p>Soft and spongy balls soaked in sugar syrup.</p>
+                <button class="ach" onclick="buygulabjamun()">Shop Now</button>
+            </div>
+    
+            <!-- Jalebi -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.6_AMDfjQM-tFWcY-qe-egQHaHa&pid=Api&P=0&h=180" height="210px" alt="Jalebi">
+                <h3>Jalebi</h3>
+                <p>Crispy and sugary spirals, a favorite festive treat.</p>
+                <button class="ach" onclick="buyjalebi()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+<!-- Jalebi -->
+<div style="display: none; background-color:  rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="jalebi" class="details">
+    <div class="details_one">
+        <img src="https://www.cookwithnabeela.com/wp-content/uploads/2024/02/1Jalebi.webp" alt="Jalebi" id="jelabiimg">
+        <div class="details-content">
+            <h2>Jalebi</h2>
+            <p><strong>Description:</strong> Crispy and juicy spirals soaked in sugar syrup, a crowd favorite.</p>
+            <p><strong>Ingredients:</strong> Maida, Sugar Syrup, Ghee</p>
+            <p><strong>Weight:</strong>1kg</p>
+            <p id="jelabiprice"><strong>Price:</strong> ₹200</p>
+            <button class="add-to-cart" onclick="addtocartjelabi()">Add to Cart</button>
+            <button class="buy-now"  onclick="openOrderModal('JELABI', 200)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+    <section>
+        <h1 style="text-shadow: 0px 0px 2px;">You may also like</h1>
+        <div class="card-container">
+            <!-- Laddu -->
+            <div class="card">
+                <img src="https://shreemsweetsandbakery.com/wp-content/uploads/2020/11/special-laddu.jpg" style="height:180px" alt="Laddu">
+                <h3>Laddu</h3>
+                <p>A rich and traditional sweet made with ghee, sugar, and flour.</p>
+                <button class="ach" onclick="buyladdu()">Shop Now</button>
+            </div>
+    
+            <!-- Kaju Katli -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.k3VyyUlePLIYlMurUmFgpgHaHa&pid=Api&P=0&h=180" height="210px" alt="Kaju Katli">
+                <h3>Kaju Katli</h3>
+                <p>A delightful cashew-based sweet with a thin silver coating.</p>
+                <button class="ach" onclick="buykajukatli()">Shop Now</button>
+            </div>
+    
+            <!-- Badusha -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.W833MuDKgFA9HopEPK2_jQHaF7&pid=Api&P=0&h=180" height="210px" alt="Badusha">
+                <h3>Badusha</h3>
+                <p>A soft, flaky, and mildly sweet delicacy perfect for celebrations.</p>
+                <button class="ach" onclick="buybadusha()">Shop Now</button>
+            </div>
+    
+            <!-- Burfi -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2017/10/rava-burfi-recipe-1-500x500.jpg" height="210px" alt="Burfi">
+                <h3>Burfi</h3>
+                <p>A creamy milk-based sweet that melts in your mouth.</p>
+                <button class="ach" onclick="buyburfi()">Shop Now</button>
+            </div>
+    
+            <!-- Gulab Jamun -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/09/gulab-jamun.jpg" style="height: 210px;" alt="Gulab Jamun">
+                <h3>Gulab Jamun</h3>
+                <p>Soft and spongy balls soaked in sugar syrup.</p>
+                <button class="ach" onclick="buygulabjamun()">Shop Now</button>
+            </div>
+    
+            <!-- Jalebi -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.6_AMDfjQM-tFWcY-qe-egQHaHa&pid=Api&P=0&h=180" height="210px" alt="Jalebi">
+                <h3>Jalebi</h3>
+                <p>Crispy and sugary spirals, a favorite festive treat.</p>
+                <button class="ach" onclick="buyjalebi()">Shop Now</button>
+            </div>
+        </div>
+        
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+
+
+
+
+
+
+    <script>
+             let vegmain = document.getElementsByClassName('ach')
+        let vegdis = document.getElementById('main')
+        let vegsub = document.getElementsByClassName("details")
+        let back = document.getElementsByClassName('back')
+        for (let i = 0; i < vegmain.length; i++) {
+            vegmain[i].onclick = function () {
+                vegdis.style.display = 'none'     
+                vegsub[i].style.display = 'block'
+                back[i].onclick = function backToMenu() {
+                    vegdis.style.display = 'block'
+                    vegsub[i].style.display = 'none'
+                }
+            }
+        }
+        function homecart(){
+    window.location.href="cart.html"
+
+}
+
+function addtocartladdu(){
+      alert("Laddu's added to your cart")
+      let img=document.getElementById('ladduimage')
+      let price=document.getElementById("ladduprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Laddus", "quantity":1 ,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+function addtocartkajjukatli(){
+      alert("kajju katli sweet added to your cart")
+      let img=document.getElementById('kajjukatliimg')
+      let price=document.getElementById("kajjukatliprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Kajju Katlli","quantity":1,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+function addtocartbadusha(){
+      alert("Badusha sweet added to your cart")
+      let img=document.getElementById('badushaimg')
+      let price=document.getElementById("badushaprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Badusha Sweet","quantity":1,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+function addtocartburfi(){
+      alert("Burfi Sweet added to your cart")
+      let img=document.getElementById('burfiimg')
+      let price=document.getElementById("burfiprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Burfi Sweet","quantity":1,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+function addtocartgulabjamun(){
+      alert("Gulab Jamun Sweet added to your cart")
+      let img=document.getElementById('gulabjamunimg')
+      let price=document.getElementById("gulabjamunprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Gulab Jamun Sweet","quantity":1,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+function addtocartjelabi(){
+      alert("Jelabi Sweet added to your cart")
+      let img=document.getElementById('jelabiimg')
+      let price=document.getElementById("jelabiprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Jelabi Sweet","quantity":1,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+
+
+
+
+  let selectedPickle = '';
+  let picklePrice = 0;
+
+  function openOrderModal(pickleName, price) {
+    selectedPickle = pickleName;
+    picklePrice = price;
+    document.getElementById('pickleName').innerText = `Order ${pickleName}`;
+    document.getElementById('quantityInput').value = '';
+    document.getElementById('addressInput').value = '';
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('orderModal').style.display = 'block';
+  }
+
+  function closeOrderModal() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('orderModal').style.display = 'none';
+  }
+
+  function placeOrder() {
+    const phoneNumber = '9515174064';
+    const quantity = parseFloat(document.getElementById('quantityInput').value);
+    const address = document.getElementById('addressInput').value.trim();
+
+    if (!quantity || quantity <= 0) {
+      alert('Invalid quantity. Please enter a valid number.');
+      return;
+    }
+
+    if (!address) {
+      alert('Address is required to proceed!');
+      return;
+    }
+
+    const totalPrice = quantity * picklePrice;
+    const orderId = 'CP' + Math.floor(100000 + Math.random() * 900000);
+
+    const message = `𝗛𝗲𝗹𝗹𝗼,\n𝗜 𝘄𝗼𝘂𝗹𝗱 𝗹𝗶𝗸𝗲 𝘁𝗼 𝗼𝗿𝗱𝗲𝗿 *${selectedPickle}*.\n𝗢𝗿𝗱𝗲𝗿 𝗜𝗗: ${orderId}\n𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆: ${quantity}kg\n𝗧𝗼𝘁𝗮𝗹 𝗣𝗿𝗶𝗰𝗲: ₹${totalPrice}\n𝗗𝗲𝗹𝗶𝘃𝗲𝗿𝘆 𝗔𝗱𝗱𝗿𝗲𝘀𝘀: ${address}\n𝗣𝗹𝗲𝗮𝘀𝗲 𝗰𝗼𝗻𝗳𝗶𝗿𝗺 𝗺𝘆 𝗼𝗿𝗱𝗲𝗿\n𝗡𝗼𝘁𝗲:\n𝗣𝗹𝗲𝗮𝘀𝗲 𝗱𝗼 𝗻𝗼𝘁 𝗺𝗼𝗱𝗶𝗳𝘆 𝘁𝗵𝗶𝘀 𝗺𝗲𝘀𝘀𝗮𝗴𝗲.\n𝗬𝗼𝘂𝗿 𝗽𝗿𝗶𝗰𝗲 𝗱𝗲𝗽𝗲𝗻𝗱𝘀 𝗼𝗻 𝘆𝗼𝘂𝗿 𝗾𝘂𝗮𝗻𝘁𝗶𝘁𝘆.\n\n*𝗧𝗵𝗮𝗻𝗸 𝘆𝗼𝘂 𝗳𝗼𝗿 𝗼𝗿𝗱𝗲𝗿𝗶𝗻𝗴!* `;
+
+    const encodedMessage = encodeURIComponent(message);
+    const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.location.href = url;
+  }
+
+  document.getElementById('overlay').addEventListener('click', closeOrderModal);
+
+    </script>
+    
+</body>
+</html>

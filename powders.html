@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <title>Document</title>
+    <style>
+ 
+
+        .details_one {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            width: 80%;
+            margin-top: -3px;
+        }
+
+        .details img {
+            width: 500px;
+            height: 500px;
+            border-radius: 10px;
+            margin-right: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .details-content h2{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 44px;
+            text-shadow: 0px 0px 2px;
+        }
+        .details-content p{
+                 font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                 font-size: 20px;
+        }
+        .add-to-cart {
+            background-color:aqua;
+            /* width: 100px; */
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 5px 1px;
+        }
+        .buy-now{
+            background-color:lawngreen;
+            width: 100px;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 5px 1px;
+        }
+        .navbar-brand {
+        font-size: 35px;
+        margin-left: 25px;
+    }
+
+    .d-flex input {
+        width: 550px;
+        position: relative;
+        left: -280px;
+    }
+    body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(230, 204, 62);
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* gap: 150px; */
+            row-gap:50px;
+            column-gap: 150px;
+            margin-left: 40px;
+           
+
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height:25em;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .card button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .card button:hover {
+            background-color: #0056b3;
+        }
+        footer {
+      background-color:brown;
+      color: #fff;
+      padding: 40px 0;
+    }
+    footer .social-icons a {
+      color: #fff;
+      margin: 0 15px;
+      font-size: 30px;
+      transition: color 0.3s;
+    }
+    footer .social-icons a:hover {
+      color: #f8b400;
+    }
+    footer .footer-links a {
+      color: #ccc;
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+      transition: color 0.3s;
+    }
+    footer .footer-links a:hover {
+      color: #fff;
+    }
+    .items img{
+       border-radius:10px;
+    }
+    
+    /* Mobile (small screens) */
+    @media (max-width: 576px) {
+      .details_one img {
+        width: 270px !important;
+        height: 280px;
+      
+      }
+      .details_one{
+        flex-wrap: wrap;
+      }
+      .zoom img{
+        width: 20px !important;
+        height: 20px;
+        
+      }
+
+
+    }
+
+    /* Tablet (medium screens) */
+    @media (min-width: 577px) and (max-width: 768px) {
+      .details_one img {
+        width: 470px !important;
+        height: 380px;
+      
+      }
+      .details_one{
+        flex-wrap: wrap;
+      }
+      .zoom img{
+        width: 20px !important;
+        height: 20px;
+        
+      }
+    }
+
+    /* Large mobile and small laptops */
+    @media (min-width: 769px) and (max-width: 992px) {
+      .details_one img {
+        width: 670px !important;
+        height: 380px;
+      
+      }
+      .details_one{
+        flex-wrap: wrap;
+      }
+      .zoom img{
+        width: 20px !important;
+        height: 20px;
+        
+      }
+    }
+    
+                /* Button styling */
+                .div1 {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Header styling */
+    .div2 {
+      margin-bottom: 20px;
+    }
+
+    /* Modal overlay styling */
+    .div3 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      z-index: 10;
+    }
+
+    /* Modal content box styling */
+    .div4 {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      display: none;
+      z-index: 20;
+      text-align: left;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    /* Input fields styling */
+    .div5, .div6 {
+      width: calc(100% - 20px);
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Confirm order button styling */
+    .div7 {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    
+
+    </style>
+</head>
+
+<body>
+
+  <div id="overlay" class="div3"></div>
+  <div id="orderModal" class="div4">
+    <h2 id="pickleName" style="  text-align: center; font-family: Arial, sans-serif;">Order Pickle</h2>
+    <p>Enter quantity (in Kg):</p>
+    <input type="number" id="quantityInput" class="div5" placeholder="1" min="1">
+    <p>Enter your address:</p>
+    <input type="text" id="addressInput" class="div6" placeholder="Your full address">
+    <button onclick="placeOrder()" class="div7">Confirm Order</button>
+  </div>
+
+    <nav class="navbar navbar-expand-lg"
+    style="background-color:brown; height: 80px; position: sticky; top: 0; z-index: 1050; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+            style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); font-weight: bold;">𝕾𝖗𝖎𝖓𝖎𝖛𝖆𝖘𝖆
+            𝖋𝖔𝖔𝖉𝖘</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav" style="padding-left: 70px;" >
+                <li class="nav-item" style="padding: 10px;">
+                    <a class="nav-link active" aria-current="page" href="#"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">Home</a>
+                </li> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="nav-item" style="padding: 10px;">
+                    <a class="nav-link" href="#vegmain"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">Shop
+                        Now</a>
+                </li>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="nav-item" style="padding: 10px;">
+                    <a class="nav-link" href="#"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">About
+                        Us</a>
+                </li>
+                <li class="nav-item" style="padding: 10px; width:50px;">
+                    <a class="nav-link" href="#"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;"><i style="font-size:27px; padding-left: 19em;" class="fa-solid fa-cart-shopping" onclick="homecart()" ></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div id="main">
+    <section> 
+        <h1 style="text-shadow: 0px 0px 2px;">Here We Provide Premium Quality Pickle Powders</h1>
+        <div class="card-container">
+            <!-- Karveapaku Powder -->
+            <div class="card">
+                <img src="https://2.bp.blogspot.com/_Htoia889FHk/S_5dJybG0dI/AAAAAAAAAmk/jqbRUOIVrUo/s1600/curry+leaves+powder.jpg" style="height: 190px;" alt="Karveapaku Powder">
+                <h3>Karveapaku Powder</h3>
+                <p>Perfect blend of spices for making traditional Karveapaku pickle.</p>
+                <button class="ach" onclick="buyKarveapakuPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Palli Powder -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.tlChNqnt_rWQZ5HptmmDqwHaHa&pid=Api&P=0&h=180" style="height: 190px;" alt="Palli Powder">
+                <h3>Palli Powder</h3>
+                <p>Delicious and flavorful ground peanuts, perfect for your pickle needs.</p>
+                <button class="ach" onclick="buyPalliPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Velliulli Powder -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.1j7KMMAMhLjWBoxZ0ajUXAHaJQ&pid=Api&P=0&h=180" style="height: 210px;" alt="Velliulli Powder">
+                <h3>Velliulli Powder</h3>
+                <p>Aromatic garlic powder that adds a punch to your pickles.</p>
+                <button class="ach" onclick="buyVelliulliPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Kobari Powder -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.DWCJl0erfKYNAONnAz2_7QHaHa&pid=Api&P=0&h=180" alt="Kobari Powder">
+                <h3>Kobari Powder</h3>
+                <p>Fresh and fragrant coconut powder for your tangy pickles.</p>
+                <button class="ach" onclick="buyKobariPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Karam Podi -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.U-T6cG-s-MEmih8GYDr2LQHaJ4&pid=Api&P=0&h=180" style="height: 210px;" alt="Karam Podi">
+                <h3>Karam Podi</h3>
+                <p>Spicy and tangy Karam Podi, a must-have for all pickle lovers.</p>
+                <button class="ach" onclick="buyKaramPodi()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    
+</div>
+<!-- Karveapaku Powder -->
+<div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="karveapaku" class="details">
+    <div class="details_one">
+        <img src="https://2.bp.blogspot.com/_Htoia889FHk/S_5dJybG0dI/AAAAAAAAAmk/jqbRUOIVrUo/s1600/curry+leaves+powder.jpg" alt="Karveapaku Powder" id="KarveapakuPowderimage">
+        <div class="details-content">
+            <h2>Karveapaku Powder</h2>
+            <p><strong>Description:</strong> Tangy and flavorful Karveapaku powder, perfect for adding a unique taste to pickles and curries.</p>
+            <p><strong>Weight:</strong>1kg</p>
+            <p id="Karveapakupodiprice"><strong>Price:</strong> ₹150</p>
+            <button class="add-to-cart" onclick="addtocartKarveapakuPowder()">Add to Cart</button>
+            <button class="buy-now"  onclick="openOrderModal('KARVEAPAKU PODI', 150)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+    <section> 
+        <h1 style="text-shadow: 0px 0px 2px;">Here We Provide Premium Quality Pickle Powders</h1>
+        <div class="card-container">
+            <!-- Karveapaku Powder -->
+            <div class="card">
+                <img src="https://2.bp.blogspot.com/_Htoia889FHk/S_5dJybG0dI/AAAAAAAAAmk/jqbRUOIVrUo/s1600/curry+leaves+powder.jpg" style="height: 190px;" alt="Karveapaku Powder">
+                <h3>Karveapaku Powder</h3>
+                <p>Perfect blend of spices for making traditional Karveapaku pickle.</p>
+                <button class="ach" onclick="buyKarveapakuPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Palli Powder -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.tlChNqnt_rWQZ5HptmmDqwHaHa&pid=Api&P=0&h=180" style="height: 190px;" alt="Palli Powder">
+                <h3>Palli Powder</h3>
+                <p>Delicious and flavorful ground peanuts, perfect for your pickle needs.</p>
+                <button class="ach" onclick="buyPalliPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Velliulli Powder -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.1j7KMMAMhLjWBoxZ0ajUXAHaJQ&pid=Api&P=0&h=180" style="height: 210px;" alt="Velliulli Powder">
+                <h3>Velliulli Powder</h3>
+                <p>Aromatic garlic powder that adds a punch to your pickles.</p>
+                <button class="ach" onclick="buyVelliulliPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Kobari Powder -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.DWCJl0erfKYNAONnAz2_7QHaHa&pid=Api&P=0&h=180" alt="Kobari Powder">
+                <h3>Kobari Powder</h3>
+                <p>Fresh and fragrant coconut powder for your tangy pickles.</p>
+                <button class="ach" onclick="buyKobariPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Karam Podi -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.U-T6cG-s-MEmih8GYDr2LQHaJ4&pid=Api&P=0&h=180" style="height: 210px;" alt="Karam Podi">
+                <h3>Karam Podi</h3>
+                <p>Spicy and tangy Karam Podi, a must-have for all pickle lovers.</p>
+                <button class="ach" onclick="buyKaramPodi()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+<!-- Palli Powder -->
+<div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="palli" class="details">
+    <div class="details_one">
+        <img src="https://2.bp.blogspot.com/-F8YoVPqFhNQ/WxKyhxmFDmI/AAAAAAAAAbg/AhyiR7D4pn8EaOZqxvFMo4Nv7SDNKoKMACEwYBhgL/s1600/1527950409076.jpg" alt="Palli Powder" id="PalliPowderimg">
+        <div class="details-content">
+            <h2>Palli Powder</h2>
+            <p><strong>Description:</strong> Rich and aromatic peanut powder, perfect for making flavorful chutneys and pickles.</p>
+            <p><strong>Weight:</strong> 1kg</p>
+            <p id="PalliPowderprice"><strong>Price:</strong> ₹350</p>
+            <button class="add-to-cart" onclick="addtocartPalliPowder()">Add to Cart</button>
+            <button class="buy-now"  onclick="openOrderModal('PALLI PODI', 350)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+
+    <section> 
+        <h1 style="text-shadow: 0px 0px 2px;">Here We Provide Premium Quality Pickle Powders</h1>
+        <div class="card-container">
+            <!-- Karveapaku Powder -->
+            <div class="card">
+                <img src="https://2.bp.blogspot.com/_Htoia889FHk/S_5dJybG0dI/AAAAAAAAAmk/jqbRUOIVrUo/s1600/curry+leaves+powder.jpg" style="height: 190px;" alt="Karveapaku Powder">
+                <h3>Karveapaku Powder</h3>
+                <p>Perfect blend of spices for making traditional Karveapaku pickle.</p>
+                <button class="ach" onclick="buyKarveapakuPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Palli Powder -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.tlChNqnt_rWQZ5HptmmDqwHaHa&pid=Api&P=0&h=180" style="height: 190px;" alt="Palli Powder">
+                <h3>Palli Powder</h3>
+                <p>Delicious and flavorful ground peanuts, perfect for your pickle needs.</p>
+                <button class="ach" onclick="buyPalliPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Velliulli Powder -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.1j7KMMAMhLjWBoxZ0ajUXAHaJQ&pid=Api&P=0&h=180" style="height: 210px;" alt="Velliulli Powder">
+                <h3>Velliulli Powder</h3>
+                <p>Aromatic garlic powder that adds a punch to your pickles.</p>
+                <button class="ach" onclick="buyVelliulliPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Kobari Powder -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.DWCJl0erfKYNAONnAz2_7QHaHa&pid=Api&P=0&h=180" alt="Kobari Powder">
+                <h3>Kobari Powder</h3>
+                <p>Fresh and fragrant coconut powder for your tangy pickles.</p>
+                <button class="ach" onclick="buyKobariPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Karam Podi -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.U-T6cG-s-MEmih8GYDr2LQHaJ4&pid=Api&P=0&h=180" style="height: 210px;" alt="Karam Podi">
+                <h3>Karam Podi</h3>
+                <p>Spicy and tangy Karam Podi, a must-have for all pickle lovers.</p>
+                <button class="ach" onclick="buyKaramPodi()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+<!-- Velliulli Powder -->
+<div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="velliulli" class="details">
+    <div class="details_one">
+        <img src="https://m.media-amazon.com/images/I/61Cl5PH7qFL._SL1200_.jpg" alt="Velliulli Powder" id="VelliulliPowderimg">
+        <div class="details-content">
+            <h2>Velliulli Powder</h2>
+            <p><strong>Description:</strong> Strong and spicy garlic powder, ideal for pickles and seasoning dishes with a bold flavor.</p>
+            <p><strong>Weight:</strong> 1kg</p>
+            <p id="VelliulliPowderprice"><strong>Price:</strong> ₹350</p>
+            <button class="add-to-cart" onclick="addtocartVelliulliPowder()">Add to Cart</button>
+            <button class="buy-now" onclick="openOrderModal('VELLIULLI POWDER', 350)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+    <section> 
+        <h1 style="text-shadow: 0px 0px 2px;">Here We Provide Premium Quality Pickle Powders</h1>
+        <div class="card-container">
+            <!-- Karveapaku Powder -->
+            <div class="card">
+                <img src="https://2.bp.blogspot.com/_Htoia889FHk/S_5dJybG0dI/AAAAAAAAAmk/jqbRUOIVrUo/s1600/curry+leaves+powder.jpg" style="height: 190px;" alt="Karveapaku Powder">
+                <h3>Karveapaku Powder</h3>
+                <p>Perfect blend of spices for making traditional Karveapaku pickle.</p>
+                <button class="ach" onclick="buyKarveapakuPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Palli Powder -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.tlChNqnt_rWQZ5HptmmDqwHaHa&pid=Api&P=0&h=180" style="height: 190px;" alt="Palli Powder">
+                <h3>Palli Powder</h3>
+                <p>Delicious and flavorful ground peanuts, perfect for your pickle needs.</p>
+                <button class="ach" onclick="buyPalliPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Velliulli Powder -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.1j7KMMAMhLjWBoxZ0ajUXAHaJQ&pid=Api&P=0&h=180" style="height: 210px;" alt="Velliulli Powder">
+                <h3>Velliulli Powder</h3>
+                <p>Aromatic garlic powder that adds a punch to your pickles.</p>
+                <button class="ach" onclick="buyVelliulliPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Kobari Powder -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.DWCJl0erfKYNAONnAz2_7QHaHa&pid=Api&P=0&h=180" alt="Kobari Powder">
+                <h3>Kobari Powder</h3>
+                <p>Fresh and fragrant coconut powder for your tangy pickles.</p>
+                <button class="ach" onclick="buyKobariPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Karam Podi -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.U-T6cG-s-MEmih8GYDr2LQHaJ4&pid=Api&P=0&h=180" style="height: 210px;" alt="Karam Podi">
+                <h3>Karam Podi</h3>
+                <p>Spicy and tangy Karam Podi, a must-have for all pickle lovers.</p>
+                <button class="ach" onclick="buyKaramPodi()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+<!-- Kobari Powder -->
+<div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="kobari" class="details">
+    <div class="details_one">
+        <img src="https://m.media-amazon.com/images/I/51mtWw1o7CL._SL1000_.jpg" alt="Kobari Powder" id="KobariPowderimg">
+        <div class="details-content">
+            <h2>Kobari Powder</h2>
+            <p><strong>Description:</strong> Rich and fragrant coconut powder, perfect for enhancing the taste of pickles and curries.</p>
+            <p><strong>Weight:</strong> 1kg</p>
+            <p id="KobariPowderprice"><strong>Price:</strong> ₹400</p>
+            <button class="add-to-cart" onclick="addtocartKobariPowder()">Add to Cart</button>
+            <button class="buy-now" onclick="openOrderModal('KOBARI POWDER', 400)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+    <section> 
+        <h1 style="text-shadow: 0px 0px 2px;">Here We Provide Premium Quality Pickle Powders</h1>
+        <div class="card-container">
+            <!-- Karveapaku Powder -->
+            <div class="card">
+                <img src="https://2.bp.blogspot.com/_Htoia889FHk/S_5dJybG0dI/AAAAAAAAAmk/jqbRUOIVrUo/s1600/curry+leaves+powder.jpg" style="height: 190px;" alt="Karveapaku Powder">
+                <h3>Karveapaku Powder</h3>
+                <p>Perfect blend of spices for making traditional Karveapaku pickle.</p>
+                <button class="ach" onclick="buyKarveapakuPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Palli Powder -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.tlChNqnt_rWQZ5HptmmDqwHaHa&pid=Api&P=0&h=180" style="height: 190px;" alt="Palli Powder">
+                <h3>Palli Powder</h3>
+                <p>Delicious and flavorful ground peanuts, perfect for your pickle needs.</p>
+                <button class="ach" onclick="buyPalliPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Velliulli Powder -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.1j7KMMAMhLjWBoxZ0ajUXAHaJQ&pid=Api&P=0&h=180" style="height: 210px;" alt="Velliulli Powder">
+                <h3>Velliulli Powder</h3>
+                <p>Aromatic garlic powder that adds a punch to your pickles.</p>
+                <button class="ach" onclick="buyVelliulliPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Kobari Powder -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.DWCJl0erfKYNAONnAz2_7QHaHa&pid=Api&P=0&h=180" alt="Kobari Powder">
+                <h3>Kobari Powder</h3>
+                <p>Fresh and fragrant coconut powder for your tangy pickles.</p>
+                <button class="ach" onclick="buyKobariPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Karam Podi -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.U-T6cG-s-MEmih8GYDr2LQHaJ4&pid=Api&P=0&h=180" style="height: 210px;" alt="Karam Podi">
+                <h3>Karam Podi</h3>
+                <p>Spicy and tangy Karam Podi, a must-have for all pickle lovers.</p>
+                <button class="ach" onclick="buyKaramPodi()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container" >
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+
+<!-- Karam Podi -->
+<div style="display: none; background-color: rgb(230, 204, 62); padding-top:5vh; height: 100vh;" id="karam" class="details">
+    <div class="details_one">
+        <img src="https://availeverything.com/public/uploads/all/rSnda9y7522usN5RIhBsKzfU5H78B6nCTEoxEZ0m.jpg" alt="Karam Podi" id="KaramPodiimg">
+        <div class="details-content">
+            <h2>Karam Podi</h2>
+            <p><strong>Description:</strong> Spicy and tangy Karam Podi, ideal for adding a fiery kick to your pickles and snacks.</p>
+            <p><strong>Weight:</strong> 1KG</p>
+            <p id="KaramPodiprice"><strong>Price:</strong> ₹250</p>
+            <button class="add-to-cart" onclick="addtocartKaramPodi()">Add to Cart</button>
+            <button class="buy-now" onclick="openOrderModal('KARAM PODI', 250)">Buy Now</button>
+            <p class="back">Back to Menu</p>
+        </div>
+    </div>
+    <section> 
+        <h1 style="text-shadow: 0px 0px 2px;">Here We Provide Premium Quality Pickle Powders</h1>
+        <div class="card-container">
+            <!-- Karveapaku Powder -->
+            <div class="card">
+                <img src="https://2.bp.blogspot.com/_Htoia889FHk/S_5dJybG0dI/AAAAAAAAAmk/jqbRUOIVrUo/s1600/curry+leaves+powder.jpg" style="height: 190px;" alt="Karveapaku Powder">
+                <h3>Karveapaku Powder</h3>
+                <p>Perfect blend of spices for making traditional Karveapaku pickle.</p>
+                <button class="ach" onclick="buyKarveapakuPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Palli Powder -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.tlChNqnt_rWQZ5HptmmDqwHaHa&pid=Api&P=0&h=180" style="height: 190px;" alt="Palli Powder">
+                <h3>Palli Powder</h3>
+                <p>Delicious and flavorful ground peanuts, perfect for your pickle needs.</p>
+                <button class="ach" onclick="buyPalliPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Velliulli Powder -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.1j7KMMAMhLjWBoxZ0ajUXAHaJQ&pid=Api&P=0&h=180" style="height: 210px;" alt="Velliulli Powder">
+                <h3>Velliulli Powder</h3>
+                <p>Aromatic garlic powder that adds a punch to your pickles.</p>
+                <button class="ach" onclick="buyVelliulliPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Kobari Powder -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.DWCJl0erfKYNAONnAz2_7QHaHa&pid=Api&P=0&h=180" alt="Kobari Powder">
+                <h3>Kobari Powder</h3>
+                <p>Fresh and fragrant coconut powder for your tangy pickles.</p>
+                <button class="ach" onclick="buyKobariPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Karam Podi -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.U-T6cG-s-MEmih8GYDr2LQHaJ4&pid=Api&P=0&h=180" style="height: 210px;" alt="Karam Podi">
+                <h3>Karam Podi</h3>
+                <p>Spicy and tangy Karam Podi, a must-have for all pickle lovers.</p>
+                <button class="ach" onclick="buyKaramPodi()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+          <div class="row">
+            <!-- Column 1: Food-related links -->
+            <div class="col-md-4">
+              <h5>Foodie's Corner</h5>
+              <div class="footer-links">
+                <a href="/menu">Menu</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/blog">Food Blog</a>
+              </div>
+            </div>
+    
+            <!-- Column 2: Social Media Icons -->
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+    
+            <!-- Column 3: Contact Information -->
+            <div class="col-md-4">
+              <h5>Contact Us</h5>
+              <div class="footer-links">
+                <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+                <p><i class="fas fa-phone"></i> +91 9515174064</p>
+                <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Footer Bottom -->
+          <div class="text-center mt-4">
+            <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+</div>
+
+</div>
+
+
+
+
+    <script>
+        let vegmain = document.getElementsByClassName('ach')
+        let vegdis = document.getElementById('main')
+        let vegsub = document.getElementsByClassName("details")
+        let back = document.getElementsByClassName('back')
+        for (let i = 0; i < vegmain.length; i++) {
+            vegmain[i].onclick = function () {
+                vegdis.style.display = 'none'     
+                vegsub[i].style.display = 'block'
+                back[i].onclick = function backToMenu() {
+                    vegdis.style.display = 'block'
+                    vegsub[i].style.display = 'none'
+                }
+            }
+        }
+
+function addtocartKarveapakuPowder(){
+      alert("Karveapaku Powder added to your cart")
+      let img=document.getElementById('KarveapakuPowderimage')
+      let price=document.getElementById("Karveapakupodiprice")
+      let cart1=JSON.parse(localStorage.getItem("KarveapakuPowderprice") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Karveapaku Powder", "quantity":1 ,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+function addtocartPalliPowder(){
+      alert("Palli Powder added to your cart")
+      let img=document.getElementById('PalliPowderimg')
+      let price=document.getElementById("PalliPowderprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Palli Powder","quantity":1,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+function addtocartVelliulliPowder(){
+      alert("Velliulli Powder added to your cart")
+      let img=document.getElementById('VelliulliPowderimg')
+      let price=document.getElementById("VelliulliPowderprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Velliulli Powder","quantity":1,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+function addtocartKobariPowder(){
+      alert("Kobari Powser added to your cart")
+      let img=document.getElementById('KobariPowderimg')
+      let price=document.getElementById("KobariPowderprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Kobari Powder","quantity":1,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+function addtocartKaramPodi(){
+      alert("Karam Podi added to your cart")
+      let img=document.getElementById('KaramPodiimg')
+      let price=document.getElementById("KaramPodiprice")
+      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
+      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
+      if(!(imgs.includes(img.src)))
+      {
+        cart1.push({"name":"Karam Podi","quantity":1,"amount":price.textContent})
+        imgs.push(img.src)
+      }
+      localStorage.setItem("cartimg",JSON.stringify(imgs))
+      localStorage.setItem("additem",JSON.stringify(cart1))
+    }
+
+    function homecart(){
+    window.location.href="cart.html"
+
+}
+
+
+
+
+let selectedPickle = '';
+  let picklePrice = 0;
+
+  function openOrderModal(pickleName, price) {
+    selectedPickle = pickleName;
+    picklePrice = price;
+    document.getElementById('pickleName').innerText = `Order ${pickleName}`;
+    document.getElementById('quantityInput').value = '';
+    document.getElementById('addressInput').value = '';
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('orderModal').style.display = 'block';
+  }
+
+  function closeOrderModal() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('orderModal').style.display = 'none';
+  }
+
+  function placeOrder() {
+    const phoneNumber = '9515174064';
+    const quantity = parseFloat(document.getElementById('quantityInput').value);
+    const address = document.getElementById('addressInput').value.trim();
+
+    if (!quantity || quantity <= 0) {
+      alert('Invalid quantity. Please enter a valid number.');
+      return;
+    }
+
+    if (!address) {
+      alert('Address is required to proceed!');
+      return;
+    }
+
+    const totalPrice = quantity * picklePrice;
+    const orderId = 'CP' + Math.floor(100000 + Math.random() * 900000);
+
+    const message = `𝗛𝗲𝗹𝗹𝗼,\n𝗜 𝘄𝗼𝘂𝗹𝗱 𝗹𝗶𝗸𝗲 𝘁𝗼 𝗼𝗿𝗱𝗲𝗿 *${selectedPickle}*.\n𝗢𝗿𝗱𝗲𝗿 𝗜𝗗: ${orderId}\n𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆: ${quantity}kg\n𝗧𝗼𝘁𝗮𝗹 𝗣𝗿𝗶𝗰𝗲: ₹${totalPrice}\n𝗗𝗲𝗹𝗶𝘃𝗲𝗿𝘆 𝗔𝗱𝗱𝗿𝗲𝘀𝘀: ${address}\n𝗣𝗹𝗲𝗮𝘀𝗲 𝗰𝗼𝗻𝗳𝗶𝗿𝗺 𝗺𝘆 𝗼𝗿𝗱𝗲𝗿\n𝗡𝗼𝘁𝗲:\n𝗣𝗹𝗲𝗮𝘀𝗲 𝗱𝗼 𝗻𝗼𝘁 𝗺𝗼𝗱𝗶𝗳𝘆 𝘁𝗵𝗶𝘀 𝗺𝗲𝘀𝘀𝗮𝗴𝗲.\n𝗬𝗼𝘂𝗿 𝗽𝗿𝗶𝗰𝗲 𝗱𝗲𝗽𝗲𝗻𝗱𝘀 𝗼𝗻 𝘆𝗼𝘂𝗿 𝗾𝘂𝗮𝗻𝘁𝗶𝘁𝘆.\n\n*𝗧𝗵𝗮𝗻𝗸 𝘆𝗼𝘂 𝗳𝗼𝗿 𝗼𝗿𝗱𝗲𝗿𝗶𝗻𝗴!* `;
+
+    const encodedMessage = encodeURIComponent(message);
+    const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.location.href = url;
+  }
+
+  document.getElementById('overlay').addEventListener('click', closeOrderModal);
+
+        
+ 
+    </script>
+</body>
+
+</html>

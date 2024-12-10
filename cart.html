@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(230, 204, 62);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .cart-item img {
+      width: 80px;
+      border-radius: 8px;
+    }
+
+    .cart-item-details {
+      flex-grow: 1;
+      margin-left: 20px;
+    }
+
+    .cart-item-actions {
+      display: flex;
+      align-items: center;
+    }
+
+    .cart-item-actions button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      margin: 0 5px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .cart-item-actions button:disabled {
+      background: #ddd;
+      cursor: not-allowed;
+    }
+
+    .total {
+      text-align: right;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    #total-cost-details {
+      text-align: right;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    #buy-now-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    #buy-now-button:hover {
+      background: #218838;
+    }
+
+    /* Modal Styling */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 10;
+    }
+
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .modal button {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .modal button:hover {
+      background: #218838;
+    }
+
+    .modal input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      color: #aaa;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Cart</h1>
+    <div id="cart-items"></div>
+    <div class="total" id="total-price">Total: ₹0</div>
+    <div id="total-cost-details"></div>
+    <button id="buy-now-button" style="display: none;">Buy Now</button>
+  </div>
+
+  <!-- Modal for quantity and address input -->
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Enter Your Details</h2>
+      <label for="addressInput">Enter your address:</label>
+      <input type="text" id="addressInput" placeholder="Your full address">
+      <button onclick="generateWhatsAppMessage()">Confirm Order</button>
+    </div>
+  </div>
+
+<script>
+const cartItemsContainer = document.getElementById("cart-items");
+const totalPriceElement = document.getElementById("total-price");
+const totalCostDetails = document.getElementById("total-cost-details");
+const buyNowButton = document.getElementById("buy-now-button");
+
+// Fetch items from local storage
+let cartItems = JSON.parse(localStorage.getItem("additem")) || [];
+let cartImages = JSON.parse(localStorage.getItem("cartimg")) || [];
+
+// Function to calculate total price and display details
+function calculateTotal() {
+  let total = 0;
+  let costDetails = "";
+
+  cartItems.forEach((item) => {
+    const price = parseInt(item.amount.replace(/\D/g, ""), 10);
+    total += item.quantity * price;
+    costDetails += `${item.name} - ₹${price} x ${item.quantity} = ₹${price * item.quantity}<br>`;
+  });
+
+  totalPriceElement.textContent = `Total: ₹${total}`;
+  totalCostDetails.innerHTML = costDetails;
+  return total;
+}
+
+// Function to render the cart
+function renderCart() {
+  cartItemsContainer.innerHTML = ""; // Clear existing items
+
+  if (cartItems.length === 0) {
+    cartItemsContainer.innerHTML = "<p style='text-align: center;'>There are no items added.</p>";
+    totalPriceElement.textContent = "Total: ₹0";
+    totalCostDetails.innerHTML = "";
+    buyNowButton.style.display = "none";
+    return;
+  }
+
+  cartItems.forEach((item, index) => {
+    const price = parseInt(item.amount.replace(/\D/g, ""), 10);
+
+    const cartItem = document.createElement("div");
+    cartItem.className = "cart-item";
+
+    cartItem.innerHTML = `
+      <img src="${cartImages[index] || ""}" alt="Product Image">
+      <div class="cart-item-details">
+        <p><strong>Item:</strong> ${item.name}</p>
+        <p><strong>Price:</strong> ₹${price}</p>
+        <p><strong>Total:</strong> ₹${price * item.quantity}</p>
+      </div>
+      <div class="cart-item-actions">
+        <button onclick="decreaseQuantity(${index})" ${
+      item.quantity <= 1 ? "disabled" : ""
+    }>-</button>
+        <span>${item.quantity}</span>
+        <button onclick="increaseQuantity(${index})">+</button>
+        <button onclick="removeItem(${index})" style="background: red;">Remove</button>
+      </div>
+    `;
+
+    cartItemsContainer.appendChild(cartItem);
+  });
+
+  calculateTotal();
+  buyNowButton.style.display = "block";
+}
+
+// Function to increase quantity
+function increaseQuantity(index) {
+  cartItems[index].quantity += 1;
+  localStorage.setItem("additem", JSON.stringify(cartItems));
+  renderCart();
+}
+
+// Function to decrease quantity
+function decreaseQuantity(index) {
+  if (cartItems[index].quantity > 1) {
+    cartItems[index].quantity -= 1;
+    localStorage.setItem("additem", JSON.stringify(cartItems));
+    renderCart();
+  }
+}
+
+// Function to remove an item from the cart
+function removeItem(index) {
+  const removedItemName = cartItems[index].name;
+  cartItems.splice(index, 1);
+  cartImages.splice(index, 1);
+
+  if (cartItems.length === 0) {
+    localStorage.removeItem("additem");
+  } else {
+    localStorage.setItem("additem", JSON.stringify(cartItems));
+  }
+
+  if (cartImages.length === 0) {
+    localStorage.removeItem("cartimg");
+  } else {
+    localStorage.setItem("cartimg", JSON.stringify(cartImages));
+  }
+
+  alert(`${removedItemName} has been removed from your cart.`);
+  renderCart();
+}
+
+// Function to open the modal
+function openModal() {
+  document.getElementById("orderModal").style.display = "block";
+}
+
+// Function to close the modal
+function closeModal() {
+  document.getElementById("orderModal").style.display = "none";
+}
+
+// Function to generate WhatsApp message
+function generateWhatsAppMessage() {
+  let address = document.getElementById("addressInput").value;
+  if (!address) {
+    alert("Address is required to proceed!");
+    return;
+  }
+
+  let message = "Hello,\nI would like to order:\n";
+  let totalPrice = 0;
+
+  cartItems.forEach((item) => {
+    const price = parseInt(item.amount.replace(/\D/g, ""), 10);
+    totalPrice += price * item.quantity;
+    message += `${item.name} - Quantity: ${item.quantity}, Total: ₹${price * item.quantity}\n`;
+  });
+
+  message += `\nTotal Price: ₹${totalPrice}\nDelivery Address: ${address}\n\n*Thank you for ordering*`;
+
+  const phoneNumber = "9515174064";
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+  closeModal();  // Close the modal after submission
+}
+
+// Event listener for Buy Now button
+buyNowButton.addEventListener("click", openModal);
+
+// Initial render
+renderCart();
+</script>
+</body>
+</html>
+
