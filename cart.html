@@ -311,7 +311,7 @@ function generateWhatsAppMessage() {
     message += `${item.name} - Quantity: ${item.quantity}, Total: ₹${price * item.quantity}\n`;
   });
 
-  message += `\nTotal Price: ₹${totalPrice}\nDelivery Address: ${address}\n\n*Thank you for ordering*`;
+  message += `\n*Total Price*: ₹${totalPrice}\n*Delivery Address*: ${address}\n𝗣𝗮𝘆𝗺𝗲𝗻𝘁:cash and delivary\n\n*Thank you for ordering*\nClick here to shop more--> https://sumanth-9515.github.io/Srinivasa_Foods/mainBody.html \n*Pick What make you Happy and Enjoy shoping* \n \n *Thank you for shoping, have a nice day...*\n`;
 
   const phoneNumber = "9515174064";
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
