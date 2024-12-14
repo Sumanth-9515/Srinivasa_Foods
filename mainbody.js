@@ -40,6 +40,11 @@ function homecart(){
     window.location.href="cart.html"
 
 }
+function viewmore(){
+    window.location.href="veiwmore.html"
+
+}
+
 
 function search() {
 

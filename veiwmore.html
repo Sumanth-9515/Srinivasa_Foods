@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<style>
+     .details_one {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 40px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin: 40px auto;
+      width: 80%;
+      margin-top: -3px;
+    }
+
+    .details img {
+      width: 500px;
+      height: 500px;
+      border-radius: 10px;
+      margin-right: 40px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .details-content h2 {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-size: 44px;
+      text-shadow: 0px 0px 2px;
+    }
+
+    .details-content p {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 20px;
+    }
+
+    .add-to-cart {
+      background-color: aqua;
+      /* width: 100px; */
+      padding: 10px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 5px 1px;
+    }
+
+    .buy-now {
+      background-color: lawngreen;
+      width: 100px;
+      padding: 10px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 5px 1px;
+    }
+
+    .navbar-brand {
+      font-size: 35px;
+      margin-left: 25px;
+    }
+
+    .d-flex input {
+      width: 550px;
+      position: relative;
+      left: -280px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: rgb(230, 204, 62);
+      margin: 0;
+      padding: 0;
+    }
+
+    section {
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      /* gap: 150px; */
+      row-gap: 50px;
+      column-gap: 150px;
+      margin-left: 40px;
+
+
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      width: 250px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 25em;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .card button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    footer {
+        background-color: brown;
+        color: #fff;
+        padding: 40px 0;
+    }
+
+    footer .social-icons a {
+        color: #fff;
+        margin: 0 15px;
+        font-size: 30px;
+        transition: color 0.3s;
+    }
+
+    footer .social-icons a:hover {
+        color: #f8b400;
+    }
+
+    footer .footer-links a {
+        color: #ccc;
+        text-decoration: none;
+        display: block;
+        margin: 5px 0;
+        transition: color 0.3s;
+    }
+
+    footer .footer-links a:hover {
+        color: #fff;
+    }
+
+    .card button:hover {
+      background-color: #0056b3;
+    }
+    @media (max-width: 768px) {
+  
+        a {
+            font-size: 10px !important;  /* Smaller font size on mobile */
+     
+        }
+        h1{
+            font-size:20px;
+        }
+    }
+    
+</style>
+<body>
+    <nav style="background-color: brown; position: sticky; top: 0; z-index: 1000; padding: 10px;">
+        <h1 style="color: white; text-shadow: 0px 0px 2px black; text-align: center; margin: 0;">
+            Here We provided all items in Our Srinivasa_Foods
+        </h1>
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 10px;">
+            <a href="#vegpickles" style="color: white; text-decoration: none; font-size: 18px; padding: 10px 20px; background-color: black; border-radius: 5px; text-shadow: 1px 1px 2px white; transition: background-color 0.3s; display: inline-block;">Veg Pickles</a>
+            <a href="#nonvegpickles" style="color: white; text-decoration: none; font-size: 18px; padding: 10px 20px; background-color: black; border-radius: 5px; text-shadow: 1px 1px 2px white; transition: background-color 0.3s; display: inline-block;">NonVeg Pickles</a>
+            <a href="#sweets" style="color: white; text-decoration: none; font-size: 18px; padding: 10px 20px; background-color: black; border-radius: 5px; text-shadow: 1px 1px 2px white; transition: background-color 0.3s; display: inline-block;">Sweets</a>
+            <a href="#dryfruits" style="color: white; text-decoration: none; font-size: 18px; padding: 10px 20px; background-color: black; border-radius: 5px; text-shadow: 1px 1px 2px white; transition: background-color 0.3s; display: inline-block;">DryFruits</a>
+            <a href="#powders" style="color: white; text-decoration: none; font-size: 18px; padding: 10px 20px; background-color: black; border-radius: 5px; text-shadow: 1px 1px 2px white; transition: background-color 0.3s; display: inline-block;">Powders</a>
+            <a href="#ghee" style="color: white; text-decoration: none; font-size: 18px; padding: 10px 20px; background-color: black; border-radius: 5px; text-shadow: 1px 1px 2px white; transition: background-color 0.3s; display: inline-block;">Ghee</a>
+        </div>
+    </nav>
+    
+      <section onclick="vegpickles()" id="vegpickles">
+</div>
+        </h2>
+        <div class="card-container">
+          <!-- Mango Pickle -->
+          <div class="card" >
+            <img
+              src="https://i0.wp.com/srikrishnamart.com/wp-content/uploads/2022/05/Mango-pickle-Srikrishnamart-e1654895723663.jpg?fit=1080%2C974&ssl=1"
+              alt="Mango Pickle">
+            <h3>Mango Pickle</h3>
+            <p>A tangy and spicy mango pickle, perfect with every meal.</p>
+            <button class="ach">Shop Now</button>
+          </div>
+  
+          <!-- Lemon Pickle -->
+          <div class="card">
+            <img src="https://recipes.timesofindia.com/thumb/57645740.cms?imgsize=519869&width=800&height=800"
+              alt="Lemon Pickle">
+            <h3>Lemon Pickle</h3>
+            <p>A zesty and spicy lemon pickle to enhance your meals.</p>
+            <button class="ach">Shop Now</button>
+          </div>
+  
+          <!-- Amla Pickle -->
+          <div class="card">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.BsvhlFkGkG4I48FXUTfEZwHaHa&pid=Api&P=0&h=180" alt="Amla Pickle">
+            <h3>Amla Pickle</h3>
+            <p>A healthy and flavorful pickle made from fresh amla.</p>
+            <button class="ach">Shop Now</button>
+          </div>
+  
+          <!-- Tomato Pickle -->
+          <div class="card">
+            <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/01/tomato-pickle.jpg"
+              style="height: 220px;" alt="Tomato Pickle">
+            <h3>Tomato Pickle</h3>
+            <p>A rich and tangy tomato pickle with a hint of spices.</p>
+            <button class="ach">Shop Now</button>
+          </div>
+  
+          <!-- Tamarind Pickle -->
+          <div class="card">
+            <img src="https://cdn.myshopmatic.com/images/EPOYNL/RK3GAoA8zw.png" alt="Tamarind Pickle">
+            <h3>Tamarind Pickle</h3>
+            <p>A tangy tamarind pickle packed with authentic flavors.</p>
+            <button class="ach">Shop Now</button>
+          </div>
+  
+          <!-- Kakarkaya Pickle -->
+          <div class="card">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.8VA5q_USpdHNILIE5bso-wHaFj&pid=Api&P=0&h=180"
+              style="height: 250px;" alt="Kakarkaya Pickle">
+            <h3>Kakarkaya Pickle</h3>
+            <p>A unique and bitter-sweet pickle made with kakarkaya.</p>
+            <button class="ach">Shop Now</button>
+          </div>
+        </div>
+      </section>
+<div id="nonvegpickles">
+    <section onclick="nonvegpickles()">
+        <h1 style="text-shadow: 0px 0px 2px;">Non_Veg Pickles</h1>
+        <div class="card-container">
+            <!-- Chicken Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/08/5cc6b9d7-f80b-450e-b406-ff72be30af86.jpg" style="height: 210px;" alt="Chicken Pickle">
+                <h3>Chicken Pickle</h3>
+                <p>A delicious and spicy chicken pickle, perfect for meat lovers.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Mutton Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2023/06/Image-50-scaled.jpeg" style="height:190px" alt="Mutton Pickle">
+                <h3>Mutton Pickle</h3>
+                <p>A mouth-watering and rich mutton pickle, full of bold flavors.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Prawns Pickle -->
+            <div class="card">
+                <img src="https://nativeflavors.in/wp-content/uploads/2021/02/Image-57-scaled.jpeg" style="height:250px" alt="Prawns Pickle">
+                <h3>Prawns Pickle</h3>
+                <p>A tangy and spicy prawns pickle that pairs perfectly with rice.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Fish Pickle -->
+            <div class="card">
+                <img src="https://cdn.shopify.com/s/files/1/0270/2981/products/Korameenu-Fish-Pickle_1024x1024.jpg?v=1672578950" alt="Fish Pickle">
+                <h3>Fish Pickle</h3>
+                <p>A flavorful fish pickle with a tangy and spicy twist.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Nethalu Pickle -->
+            <div class="card">
+                <img src="https://www.indiansbasket.com/media/catalog/product/cache/1/thumbnail/600x550/4e89f566c77e51811b335fb935b6cdd7/n/e/nethallu.png" alt="Nethalu Pickle">
+                <h3>Nethalu Pickle</h3>
+                <p>A traditional nethalu pickle with an authentic coastal flavor.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Egg Pickle -->
+            <div class="card">
+                <img src="https://mirchi.com/os/cdn/content/images/egg%20pickle%20vr%20milky%20mushrooms_medium_0349645.webp" alt="Egg Pickle">
+                <h3>Egg Pickle</h3>
+                <p>A unique and spicy egg pickle that’s sure to delight your taste buds.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+        </div>
+    </section>
+</div>
+<div id="sweets">
+    <section onclick=" sweets()">
+        <h1 style="text-shadow: 0px 0px 2px;">Sweets</h1>
+        <div class="card-container">
+            <!-- Laddu -->
+            <div class="card">
+                <img src="https://shreemsweetsandbakery.com/wp-content/uploads/2020/11/special-laddu.jpg" style="height:180px" alt="Laddu">
+                <h3>Laddu</h3>
+                <p>A rich and traditional sweet made with ghee, sugar, and flour.</p>
+                <button class="ach" onclick="buyladdu()">Shop Now</button>
+            </div>
+    
+            <!-- Kaju Katli -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.k3VyyUlePLIYlMurUmFgpgHaHa&pid=Api&P=0&h=180" height="210px" alt="Kaju Katli">
+                <h3>Kaju Katli</h3>
+                <p>A delightful cashew-based sweet with a thin silver coating.</p>
+                <button class="ach" onclick="buykajukatli()">Shop Now</button>
+            </div>
+    
+            <!-- Badusha -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.W833MuDKgFA9HopEPK2_jQHaF7&pid=Api&P=0&h=180" height="210px" alt="Badusha">
+                <h3>Badusha</h3>
+                <p>A soft, flaky, and mildly sweet delicacy perfect for celebrations.</p>
+                <button class="ach" onclick="buybadusha()">Shop Now</button>
+            </div>
+    
+            <!-- Burfi -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2017/10/rava-burfi-recipe-1-500x500.jpg" height="210px" alt="Burfi">
+                <h3>Burfi</h3>
+                <p>A creamy milk-based sweet that melts in your mouth.</p>
+                <button class="ach" onclick="buyburfi()">Shop Now</button>
+            </div>
+    
+            <!-- Gulab Jamun -->
+            <div class="card">
+                <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/09/gulab-jamun.jpg" height="210px" alt="Gulab Jamun">
+                <h3>Gulab Jamun</h3>
+                <p>Soft and spongy balls soaked in sugar syrup.</p>
+                <button class="ach" onclick="buygulabjamun()">Shop Now</button>
+            </div>
+    
+            <!-- Jalebi -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.6_AMDfjQM-tFWcY-qe-egQHaHa&pid=Api&P=0&h=180" height="210px" alt="Jalebi">
+                <h3>Jalebi</h3>
+                <p>Crispy and sugary spirals, a favorite festive treat.</p>
+                <button class="ach" onclick="buyjalebi()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+</div>
+<div id="powders">
+    <section onclick="powders()"> 
+        <h1 style="text-shadow: 0px 0px 2px;">Pickle Powders</h1>
+        <div class="card-container">
+            <!-- Karveapaku Powder -->
+            <div class="card">
+                <img src="https://2.bp.blogspot.com/_Htoia889FHk/S_5dJybG0dI/AAAAAAAAAmk/jqbRUOIVrUo/s1600/curry+leaves+powder.jpg" style="height: 190px;" alt="Karveapaku Powder">
+                <h3>Karveapaku Powder</h3>
+                <p>Perfect blend of spices for making traditional Karveapaku pickle.</p>
+                <button class="ach" onclick="buyKarveapakuPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Palli Powder -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.tlChNqnt_rWQZ5HptmmDqwHaHa&pid=Api&P=0&h=180" style="height: 190px;" alt="Palli Powder">
+                <h3>Palli Powder</h3>
+                <p>Delicious and flavorful ground peanuts, perfect for your pickle needs.</p>
+                <button class="ach" onclick="buyPalliPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Velliulli Powder -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.1j7KMMAMhLjWBoxZ0ajUXAHaJQ&pid=Api&P=0&h=180" style="height: 210px;" alt="Velliulli Powder">
+                <h3>Velliulli Powder</h3>
+                <p>Aromatic garlic powder that adds a punch to your pickles.</p>
+                <button class="ach" onclick="buyVelliulliPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Kobari Powder -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.DWCJl0erfKYNAONnAz2_7QHaHa&pid=Api&P=0&h=180" alt="Kobari Powder">
+                <h3>Kobari Powder</h3>
+                <p>Fresh and fragrant coconut powder for your tangy pickles.</p>
+                <button class="ach" onclick="buyKobariPowder()">Shop Now</button>
+            </div>
+    
+            <!-- Karam Podi -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.U-T6cG-s-MEmih8GYDr2LQHaJ4&pid=Api&P=0&h=180" style="height: 210px;" alt="Karam Podi">
+                <h3>Karam Podi</h3>
+                <p>Spicy and tangy Karam Podi, a must-have for all pickle lovers.</p>
+                <button class="ach" onclick="buyKaramPodi()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+</div>
+<div id="dryfruits">
+    <section> 
+        <h1 style="text-shadow: 0px 0px 2px;">Here We Provide Premium Quality Dry Fruits</h1>
+        <div class="card-container">
+            <!-- Walnuts -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.hPxneAw7B6FpoKorfqzPrQHaHa&pid=Api&P=0&h=180" style="height: 190px;" alt="Walnuts">
+                <h3>Walnuts</h3>
+                <p>Rich in omega-3 and packed with crunch, perfect for snacking.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Pista -->
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.6Ouy9CcZkF5Y4fbQpa3-BQHaH-&pid=Api&P=0&h=180" style="height: 190px;" alt="Pista">
+                <h3>Pista</h3>
+                <p>Delicious and healthy pistachios for all your cravings.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Badam -->
+            <div class="card">
+                <img src="https://dryfruitsmandy.com/wp-content/uploads/2021/02/BADAM-A.jpg" alt="Badam">
+                <h3>Badam (Almonds)</h3>
+                <p>Crispy and nutritious almonds, full of energy and taste.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Kaju -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.NisATEKUh4crVMIQOfH6lQHaHa&pid=Api&P=0&h=180" alt="Kaju">
+                <h3>Kaju (Cashews)</h3>
+                <p>Sweet and creamy cashews to brighten up your day.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Kishmish -->
+            <div class="card">
+                <img src="https://img.drz.lazcdn.com/g/kf/Sf45ce6f8dd5e40c0980d01ef90d807f8l.jpg_720x720q80.jpg" alt="Kishmish">
+                <h3>Kishmish (Raisins)</h3>
+                <p>Sweet and chewy raisins, a natural energy booster.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+    
+            <!-- Dates -->
+            <div class="card">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.7kmNHaG42fvdVKhThPr9ZAAAAA&pid=Api&P=0&h=180" alt="Dates">
+                <h3>Dates</h3>
+                <p>Soft and sweet dates, perfect for a healthy treat.</p>
+                <button class="ach">Shop Now</button>
+            </div>
+        </div>
+    </section>
+</div>
+<div id="ghee">
+    <section onclick="ghee()">
+        <h1 style="text-shadow: 0px 0px 2px;">Premium Quality Ghee</h1>
+        <div class="card-container">
+            <!-- Cow Ghee -->
+            <div class="card">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.MlmxAFO1JS4XLhpmImnytgHaHa&pid=Api&P=0&h=180" style="height: 170px;" alt="Cow Ghee">
+                <h3>Cow Ghee</h3>
+                <p>Premium quality Cow Ghee made from pure cow's milk, perfect for cooking and health benefits.</p>
+                <button class="ach" onclick="buyCowGhee()">Shop Now</button>
+            </div>
+    
+            <!-- Buffalo Ghee -->
+            <div class="card">
+                <img src="https://m.media-amazon.com/images/I/41diIEPUlnL.jpg" style="height: 190px;" alt="Buffalo Ghee">
+                <h3>Buffalo Ghee</h3>
+                <p>Rich and creamy Buffalo Ghee, a nutritious choice for traditional cooking.</p>
+                <button class="ach" onclick="buyBuffaloGhee()">Shop Now</button>
+            </div>
+        </div>
+    </section>
+</div>
+    <script src="./mainbody.js"></script>
+</body>
+<footer style="background-color: brown;">
+    <div class="container">
+      <div class="row">
+        <!-- Column 1: Food-related links -->
+        <div class="col-md-4">
+          <h5>Foodie's Corner</h5>
+          <div class="footer-links">
+            <a href="/menu">Menu</a>
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/recipes">Recipes</a>
+            <a href="/blog">Food Blog</a>
+          </div>
+        </div>
+
+        <!-- Column 2: Social Media Icons -->
+        <div class="col-md-4">
+          <h5>Follow Us</h5>
+          <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i
+                class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i
+                class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 3: Contact Information -->
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <div class="footer-links">
+            <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
+            <p><i class="fas fa-phone"></i> +91 9515174064</p>
+            <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="text-center mt-4">
+        <p>&copy; 2024 Srinivasa Foodie's Paradise. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</html>
