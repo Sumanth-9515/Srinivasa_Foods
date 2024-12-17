@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login & Sign-Up</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css">
+    <style>
+        /* Background Animation */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #96e6a1, #d4fc79, #fc6076);
+            background-size: 400% 400%;
+            animation: bgAnimation 12s ease infinite;
+        }
+
+        @keyframes bgAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Form Container Styling */
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in-out;
+            width: 350px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(80px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-container:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Input Styling */
+        input {
+            width: 90%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition: border 0.3s ease;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+
+        /* Button Styling */
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.02);
+        }
+
+        /* Toggle Text */
+        .toggle {
+            margin-top: 15px;
+            cursor: pointer;
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .toggle:hover {
+            color: #0056b3;
+        }
+
+        /* Form Animation */
+        .hidden {
+            display: none;
+        }
+.brandname{
+    font-size:32px; /* Make the text large */
+    font-family: 'Cinzel', serif; /* Elegant and decorative font */
+    color: #fff; /* Default color */
+    background: linear-gradient(45deg, #ff6b6b, #f06595, #ffcc00, #00c6ff, #845ef7); /* Beautiful gradient */
+    background-clip: text; /* Clip the background to text */
+    -webkit-background-clip: text; /* For Webkit-based browsers */
+    -webkit-text-fill-color: transparent; /* Makes the text gradient visible */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    letter-spacing: 3px; /* Space out letters */
+    text-transform: uppercase; /* Uppercase text */
+    margin-bottom: 30px; /* Add some margin below */
+    text-align: center; /* Center the text */
+    animation: glow 1.5s ease-in-out infinite alternate; /* Glowing effect animation */
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.brandname:hover {
+    transform: scale(1.1); /* Slightly enlarge the text on hover */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Login Form -->
+    <div class="form-container" id="login-form">
+        <h2 class="brandname">𝕾𝖗𝖎𝖓𝖎𝖛𝖆𝖘𝖆 𝖋𝖔𝖔𝖉𝖘</h2>
+        <h2>Login</h2>
+        <input type="email" id="login-email" placeholder="Enter your email" required>
+        <input type="password" id="login-password" placeholder="Enter your password" required>
+        <button onclick="handleLogin()">Login</button>
+        <div class="toggle" onclick="showSignUp()">Don't have an account? Sign Up</div>
+    </div>
+
+    <!-- Sign-Up Form -->
+    <div class="form-container hidden" id="signup-form">
+        <h2 class="brandname">𝕾𝖗𝖎𝖓𝖎𝖛𝖆𝖘𝖆 𝖋𝖔𝖔𝖉𝖘</h2>
+        <h2>Sign Up</h2>
+        <input type="text" id="signup-name" placeholder="Enter your name" required>
+        <input type="email" id="signup-email" placeholder="Enter your email" required>
+        <input type="password" id="signup-password" placeholder="Enter your password" required>
+        <button onclick="handleSignUp()">Sign Up</button>
+        <div class="toggle" onclick="showLogin()">Already have an account? Login</div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <script>
+        function showSignUp() {
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById('signup-form').classList.remove('hidden');
+        }
+
+        function showLogin() {
+            document.getElementById('signup-form').classList.add('hidden');
+            document.getElementById('login-form').classList.remove('hidden');
+        }
+
+        function handleSignUp() {
+            const name = document.getElementById('signup-name').value.trim();
+            const email = document.getElementById('signup-email').value.trim();
+            const password = document.getElementById('signup-password').value.trim();
+
+            if (!name || !email || !password) {
+                Swal.fire('Error', 'Please fill in all fields!', 'error');
+                return;
+            }
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            const userExists = users.some(user => user.email === email);
+
+            if (userExists) {
+                Swal.fire('Error', 'Email already registered!', 'error');
+                return;
+            }
+
+            users.push({ name, email, password });
+            localStorage.setItem('users', JSON.stringify(users));
+            Swal.fire('Success', 'Account created successfully!', 'success').then(() => showLogin());
+        }
+
+        function handleLogin() {
+            const email = document.getElementById('login-email').value.trim();
+            const password = document.getElementById('login-password').value.trim();
+
+            if (!email || !password) {
+                Swal.fire('Error', 'Please fill in all fields!', 'error');
+                return;
+            }
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            const user = users.find(user => user.email === email && user.password === password);
+
+            if (user) {
+                Swal.fire('Success', `Welcome back, ${user.name}!`, 'success');
+                setTimeout(() => window.location.href = "mainBody.html", 2000);
+            } else {
+                Swal.fire('Error', 'Invalid email or password!', 'error');
+            }
+        }
+    </script>
+</body>
+
+</html>
