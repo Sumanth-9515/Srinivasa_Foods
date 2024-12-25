@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Icon</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    /* Profile icon style */
+    .profile-icon {
+      width: 50px;
+      height: 50px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Profile Icon (shows first letter of the name) -->
+  <div class="profile-icon" onclick="showProfile()">
+    <span id="profileLetter"></span>
+  </div>
+
+  <script>
+    // Function to update profile icon and letter when data changes
+    function updateProfileIcon() {
+      const profileData = JSON.parse(localStorage.getItem('profileData'));
+      if (profileData) {
+        document.getElementById('profileLetter').textContent = profileData.name.charAt(0).toUpperCase();
+      }
+    }
+
+    // Function to load profile data from localStorage and show it in SweetAlert
+    function showProfile() {
+      const profileData = JSON.parse(localStorage.getItem('profileData'));
+
+      // If data exists in localStorage, display it in SweetAlert
+      if (profileData) {
+        Swal.fire({
+          title: 'Profile Information',
+          html: `
+            <strong>Name:</strong> ${profileData.name || "No Name Provided"}<br>
+            <strong>Email:</strong> ${profileData.email || "No Email Provided"}<br>
+            <strong>Password:</strong> ${profileData.password || "No Password Provided"}
+          `,
+          icon: 'info',
+          confirmButtonText: 'Close'
+        });
+      } else {
+        // If no profile data is available, show a message
+        Swal.fire({
+          title: 'No Profile Data',
+          text: 'Profile information is not available. Please provide your details.',
+          icon: 'warning',
+          confirmButtonText: 'Close'
+        });
+      }
+    }
+
+    // Initialize the profile icon with data from localStorage (if available)
+    if (localStorage.getItem('profileData')) {
+      updateProfileIcon();
+    } else {
+      // If no profile data exists, you can handle it accordingly (like setting a default letter or showing a message).
+      document.getElementById('profileLetter').textContent = "N"; // Example default letter
+    }
+
+  </script>
+
+</body>
+</html>
