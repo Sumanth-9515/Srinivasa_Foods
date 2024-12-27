@@ -46,20 +46,11 @@ function viewmore(){
 }
 
 
-function search() {
 
-    let query = document.getElementById("searchinput").value.trim().toLowerCase();
-
-    if (query === "veg pickles") {
-        window.location.href = "vegpickles.html"; 
-    } else {
-        alert("No results found for your search.");
-    }
-}
 
 function search() {
     // Get the value from the search input field
-    let query = document.getElementById("searchinput").value.trim().toLowerCase();
+    let query = document.getElementById("customSearchInput").value.trim().toLowerCase();
 
     // Check the search query and redirect accordingly
     if (query === "non veg pickles") {
@@ -68,17 +59,43 @@ function search() {
         window.location.href = "vegpickles.html";
     } else if (query === "pickle powder") {
         window.location.href = "powders.html";
-    }else if (query === "sweets") {
+    } else if (query === "sweets") {
         window.location.href = "sweets.html";
-    }else if (query === "ghee") {
+    } else if (query === "ghee") {
         window.location.href = "ghee.html";
-    }else if (query === "dry fruits") {
+    } else if (query === "dry fruits") {
         window.location.href = "dryfruits.html";
-    }
-     else {
+    } else {
         alert("No results found for your search.");
     }
 }
+function addtocart(){
+    window.location.href ="cart.html"
+}
+
+
+// logout 
+
+function logout() {
+    // Check if there is any data in localStorage
+    if (localStorage.length === 0) {
+      // If no data in localStorage, show "Please login first" alert
+      Swal.fire({
+        title: 'Please login first!',
+        icon: 'warning',
+        confirmButtonText: 'Okay'
+      });
+    } else {
+      // If data exists in localStorage, clear it and show logout success
+      localStorage.clear();
+      Swal.fire({
+        title: 'You are logged out successfully!',
+        icon: 'success',
+        confirmButtonText: 'Okay'
+      });
+    }
+  }
+
 
 
 window.onload = function() {

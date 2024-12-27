@@ -47,6 +47,7 @@
             overflow: hidden;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            height: 310px;
         }
 
         .items div:hover {
@@ -183,17 +184,6 @@
 
     .abouth5 {
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-
-    .navbar-brand {
-        font-size: 35px;
-        margin-left: 25px;
-    }
-
-    .d-flex input {
-        width: 550px;
-        position: relative;
-        left: -280px;
     }
 
     .items.image {
@@ -359,6 +349,16 @@
       background-color: #003d80;
       transform: translate(2px);
     }
+    .logout-btn {
+      background-color: #ff5733;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
     /* Mobile (small screens) */
     @media (max-width: 576px) {
         .items {
@@ -405,21 +405,9 @@
             height: 260px;
         }
 
-        .d-flex input {
-            position: relative;
-            left: 100px;
-        }
-
-        .navbar-expand-lg input {
-            /* display: none; */
-            position: relative;
-            left: 250px;
-            top: -50px;
-            width: 160px;
-            height: 40px;
 
 
-        }
+ 
       .aboutmatter{
             width: 300px;
         }
@@ -443,7 +431,7 @@
         }
         .card-img-top{
             margin-left: -10px;
-            width: 200px;
+            width: 240px;
             height: 180px;
         }
         #cartsymbol{
@@ -451,10 +439,7 @@
             left: 220px;
             top: 10px;
         }
-        .navbar-toggler-icon,button.navbar-toggler
-      {
-        display: none;
-      }
+
 
     }
 
@@ -472,20 +457,15 @@
             width: 250px;
         }
 
-        .navbar-brand {
-            font-size: 28px;
-        }
 
-        .d-flex input {
-            width: 300px;
-        }
 
         .about {
             margin: 30px;
             flex-wrap: nowrap;
         }
 
-        .about img {
+
+        .about video {
             width: 100%;
             max-width: 400px;
         }
@@ -530,15 +510,9 @@
             padding-top: 40px;
         }
 
-        .navbar-brand {
-            font-size: 30px;
-        }
 
-        .d-flex input {
-            width: 400px;
-        }
 
-        .about {
+        .about video{
             margin: 40px;
             flex-wrap: nowrap;
         }
@@ -552,53 +526,146 @@
             margin: 2% auto;
         }
     }
+
+    /* Additional Media Queries for Responsiveness */
+    @media (max-width: 576px) {
+        .custom-navbar {
+            height: auto;
+        }
+        .custom-navbar-brand {
+            font-size: 2.0rem;
+            display: flex;
+            align-items: center;
+        }
+        .custom-navbar-brand i {
+            margin-left: 10px;
+            font-size: 1.5rem;
+        }
+        .custom-nav-link {
+            padding: 8px 10px;
+            font-size: 0.9rem;
+        }
+        .custom-search-input {
+            padding: 8px;
+            font-size: 0.85rem;
+        }
+        .custom-cart-icon {
+            font-size: 24px;
+            margin-top: 0.5vh;
+        }
+        .custom-navbar-collapse {
+            background-color: brown;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .custom-nav-link {
+            display: block;
+            color: white;
+        }
+        
+    }
+    @media (min-width: 577px) and (max-width: 991px) {
+        .custom-navbar {
+            height: auto;
+        }
+        .custom-navbar-brand {
+            font-size: 2rem;
+        }
+        .custom-nav-link {
+            padding: 10px 15px;
+            font-size: 1rem;
+        }
+        .custom-search-input {
+            padding: 10px;
+            font-size: 0.95rem;
+        }
+        .custom-cart-icon {
+            font-size: 26px;
+            margin-top: 0.5vh;
+        }
+        .custom-navbar-collapse {
+            background-color: brown;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .custom-nav-link {
+            color: white;
+        }
+    }
+    @media (min-width: 992px) {
+        .custom-navbar {
+            height: 80px;
+        }
+        .custom-navbar-brand {
+            font-size: 2.5rem;
+        }
+        .custom-nav-link {
+            padding: 10px 20px;
+        }
+        .custom-search-input {
+            font-size: 1rem;
+            margin-right: 10px;
+        }
+        .custom-cart-icon {
+            font-size: 27px;
+            margin-left: 10px;
+        }
+    }
+    .custom-toggler-icon {
+        background-color: transparent;
+    }
+
 </style>
 
 
 
 <body>
-    <nav class="navbar navbar-expand-lg"
-        style="background-color:brown; height: 80px; position: sticky; top: 0; z-index: 1050; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"
-                style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); font-weight: bold;">𝕾𝖗𝖎𝖓𝖎𝖛𝖆𝖘𝖆 𝖋𝖔𝖔𝖉𝖘</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"
-                            style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#vegmain"
-                            style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">Shop
-                            Now</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about"
-                            style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">About
-                            Us</a>
-                    </li>
-                </ul>
-            </div>
-            <form class="d-flex" role="search" onsubmit="search(); return false;">
-                <input class="form-control me-2" id="searchinput" type="search" placeholder="Search your food"
+    <nav class="navbar navbar-expand-lg custom-navbar"
+    style="background-color: brown; height: 80px; position: sticky; top: 0; z-index: 1050; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <div class="container-fluid">
+        <!-- Brand Name -->
+        <a class="navbar-brand custom-navbar-brand" href="#"
+            style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); font-weight: bold;">
+            𝕾𝖗𝖎𝖓𝖎𝖛𝖆𝖘𝖆 𝖋𝖔𝖔𝖉𝖘
+        </a>
+
+        <!-- Toggler Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#customNavbarCollapse"
+            aria-controls="customNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon custom-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible Content -->
+        <div class="collapse navbar-collapse custom-navbar-collapse" id="customNavbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active custom-nav-link" aria-current="page" href="#"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom-nav-link" href="#vegmain"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">Shop
+                        Now</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link custom-nav-link" href="#about"
+                        style="color: white; font-weight: bold; padding: 10px 20px; border-radius: 5px; text-transform: uppercase; transition: 0.3s;">About
+                        Us</a>
+                </li>
+                
+            </ul>
+
+            <!-- Search Form with Cart Icon -->
+            <form class="d-flex align-items-center" role="search" onsubmit="search(); return false;">
+                <input class="form-control me-2 custom-search-input" id="customSearchInput" type="search" placeholder="Search your food"
                     aria-label="Search"
                     style="border: 2px solid #A0522D; border-radius: 10px; padding: 10px; background-color: #F5F5DC; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: 0.3s;">
-                <i class="fa-solid fa-cart-shopping" id="cartsymbol"
-                    style="color: white; font-size: 27px; margin-right: 0.3vw; margin-top: 1vh;" onclick="homecart()">
-                </i>
+                <i class="fa-solid fa-cart-shopping custom-cart-icon" onclick="addtocart()" style="color: white;"></i>
             </form>
-
-
-
+            
         </div>
-        
-
-    </nav>
+    </div>
+  </nav>
 
 
     <div class="mianiamge">
@@ -740,6 +807,7 @@
         <button class="viewmore-button" onclick="viewmore()">view more</button>
     </div>
     <script src="./mainbody.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 <footer>
     <div class="container">
@@ -778,9 +846,12 @@
                     <p><i class="fas fa-map-marker-alt"></i> 500078 KPHB Street, Hyderabad</p>
                     <p><i class="fas fa-phone"></i> +91 9515174064</p>
                     <p><i class="fas fa-envelope"></i>myakalasumanthreddy@gmail.com</p>
+                    <button class="logout-btn" onclick="logout()">Log Out</button>
                 </div>
             </div>
+            
         </div>
+     
 
         <!-- Footer Bottom -->
         <div class="text-center mt-4">
