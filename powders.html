@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <title>Document</title>
+    <title>Pickle Powders</title>
     <style>
  
 
@@ -974,76 +975,126 @@
             }
         }
 
-function addtocartKarveapakuPowder(){
-      alert("Karveapaku Powder added to your cart")
-      let img=document.getElementById('KarveapakuPowderimage')
-      let price=document.getElementById("Karveapakupodiprice")
-      let cart1=JSON.parse(localStorage.getItem("KarveapakuPowderprice") )|| []
-      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
-      if(!(imgs.includes(img.src)))
-      {
-        cart1.push({"name":"Karveapaku Powder", "quantity":1 ,"amount":price.textContent})
-        imgs.push(img.src)
-      }
-      localStorage.setItem("cartimg",JSON.stringify(imgs))
-      localStorage.setItem("additem",JSON.stringify(cart1))
+        function addtocartKarveapakuPowder(){
+    Swal.fire({
+        title: 'Karveapaku Powder added to your cart',
+        showCancelButton: true,
+        confirmButtonText: 'OK',
+        cancelButtonText: 'View Cart',
+        icon: 'success'
+    }).then((result) => {
+        if (result.isDismissed) {
+            window.location.href = "cart.html"; // Redirect to cart.html if "View Cart" is clicked
+        }
+    });
+    let img = document.getElementById('KarveapakuPowderimage');
+    let price = document.getElementById("Karveapakupodiprice");
+    let cart1 = JSON.parse(localStorage.getItem("KarveapakuPowderprice")) || [];
+    let imgs = JSON.parse(localStorage.getItem("cartimg")) || [];
+    if (!(imgs.includes(img.src))) {
+        cart1.push({"name": "Karveapaku Powder", "quantity": 1, "amount": price.textContent});
+        imgs.push(img.src);
     }
+    localStorage.setItem("cartimg", JSON.stringify(imgs));
+    localStorage.setItem("additem", JSON.stringify(cart1));
+}
+
 function addtocartPalliPowder(){
-      alert("Palli Powder added to your cart")
-      let img=document.getElementById('PalliPowderimg')
-      let price=document.getElementById("PalliPowderprice")
-      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
-      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
-      if(!(imgs.includes(img.src)))
-      {
-        cart1.push({"name":"Palli Powder","quantity":1,"amount":price.textContent})
-        imgs.push(img.src)
-      }
-      localStorage.setItem("cartimg",JSON.stringify(imgs))
-      localStorage.setItem("additem",JSON.stringify(cart1))
+    Swal.fire({
+        title: 'Palli Powder added to your cart',
+        showCancelButton: true,
+        confirmButtonText: 'OK',
+        cancelButtonText: 'View Cart',
+        icon: 'success'
+    }).then((result) => {
+        if (result.isDismissed) {
+            window.location.href = "cart.html";
+        }
+    });
+    let img = document.getElementById('PalliPowderimg');
+    let price = document.getElementById("PalliPowderprice");
+    let cart1 = JSON.parse(localStorage.getItem("additem")) || [];
+    let imgs = JSON.parse(localStorage.getItem("cartimg")) || [];
+    if (!(imgs.includes(img.src))) {
+        cart1.push({"name": "Palli Powder", "quantity": 1, "amount": price.textContent});
+        imgs.push(img.src);
     }
+    localStorage.setItem("cartimg", JSON.stringify(imgs));
+    localStorage.setItem("additem", JSON.stringify(cart1));
+}
+
 function addtocartVelliulliPowder(){
-      alert("Velliulli Powder added to your cart")
-      let img=document.getElementById('VelliulliPowderimg')
-      let price=document.getElementById("VelliulliPowderprice")
-      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
-      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
-      if(!(imgs.includes(img.src)))
-      {
-        cart1.push({"name":"Velliulli Powder","quantity":1,"amount":price.textContent})
-        imgs.push(img.src)
-      }
-      localStorage.setItem("cartimg",JSON.stringify(imgs))
-      localStorage.setItem("additem",JSON.stringify(cart1))
+    Swal.fire({
+        title: 'Velliulli Powder added to your cart',
+        showCancelButton: true,
+        confirmButtonText: 'OK',
+        cancelButtonText: 'View Cart',
+        icon: 'success'
+    }).then((result) => {
+        if (result.isDismissed) {
+            window.location.href = "cart.html";
+        }
+    });
+    let img = document.getElementById('VelliulliPowderimg');
+    let price = document.getElementById("VelliulliPowderprice");
+    let cart1 = JSON.parse(localStorage.getItem("additem")) || [];
+    let imgs = JSON.parse(localStorage.getItem("cartimg")) || [];
+    if (!(imgs.includes(img.src))) {
+        cart1.push({"name": "Velliulli Powder", "quantity": 1, "amount": price.textContent});
+        imgs.push(img.src);
     }
+    localStorage.setItem("cartimg", JSON.stringify(imgs));
+    localStorage.setItem("additem", JSON.stringify(cart1));
+}
+
 function addtocartKobariPowder(){
-      alert("Kobari Powser added to your cart")
-      let img=document.getElementById('KobariPowderimg')
-      let price=document.getElementById("KobariPowderprice")
-      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
-      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
-      if(!(imgs.includes(img.src)))
-      {
-        cart1.push({"name":"Kobari Powder","quantity":1,"amount":price.textContent})
-        imgs.push(img.src)
-      }
-      localStorage.setItem("cartimg",JSON.stringify(imgs))
-      localStorage.setItem("additem",JSON.stringify(cart1))
+    Swal.fire({
+        title: 'Kobari Powder added to your cart',
+        showCancelButton: true,
+        confirmButtonText: 'OK',
+        cancelButtonText: 'View Cart',
+        icon: 'success'
+    }).then((result) => {
+        if (result.isDismissed) {
+            window.location.href = "cart.html";
+        }
+    });
+    let img = document.getElementById('KobariPowderimg');
+    let price = document.getElementById("KobariPowderprice");
+    let cart1 = JSON.parse(localStorage.getItem("additem")) || [];
+    let imgs = JSON.parse(localStorage.getItem("cartimg")) || [];
+    if (!(imgs.includes(img.src))) {
+        cart1.push({"name": "Kobari Powder", "quantity": 1, "amount": price.textContent});
+        imgs.push(img.src);
     }
+    localStorage.setItem("cartimg", JSON.stringify(imgs));
+    localStorage.setItem("additem", JSON.stringify(cart1));
+}
+
 function addtocartKaramPodi(){
-      alert("Karam Podi added to your cart")
-      let img=document.getElementById('KaramPodiimg')
-      let price=document.getElementById("KaramPodiprice")
-      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
-      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
-      if(!(imgs.includes(img.src)))
-      {
-        cart1.push({"name":"Karam Podi","quantity":1,"amount":price.textContent})
-        imgs.push(img.src)
-      }
-      localStorage.setItem("cartimg",JSON.stringify(imgs))
-      localStorage.setItem("additem",JSON.stringify(cart1))
+    Swal.fire({
+        title: 'Karam Podi added to your cart',
+        showCancelButton: true,
+        confirmButtonText: 'OK',
+        cancelButtonText: 'View Cart',
+        icon: 'success'
+    }).then((result) => {
+        if (result.isDismissed) {
+            window.location.href = "cart.html";
+        }
+    });
+    let img = document.getElementById('KaramPodiimg');
+    let price = document.getElementById("KaramPodiprice");
+    let cart1 = JSON.parse(localStorage.getItem("additem")) || [];
+    let imgs = JSON.parse(localStorage.getItem("cartimg")) || [];
+    if (!(imgs.includes(img.src))) {
+        cart1.push({"name": "Karam Podi", "quantity": 1, "amount": price.textContent});
+        imgs.push(img.src);
     }
+    localStorage.setItem("cartimg", JSON.stringify(imgs));
+    localStorage.setItem("additem", JSON.stringify(cart1));
+}
+
 
     function homecart(){
     window.location.href="cart.html"

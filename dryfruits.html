@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <title>Document</title>
+    <title>Dry Fruits</title>
     <style>
        
         .details_one {
@@ -1131,89 +1132,149 @@
 }
         
 function addtocartwalnuts(){
-      alert("Walnuts added to your cart")
-      let img=document.getElementById('walnutsimage')
-      let price=document.getElementById("walnutsprice")
-      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
-      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
-      if(!(imgs.includes(img.src)))
-      {
-        cart1.push({"name":"Walnuts", "quantity":1 ,"amount":price.textContent})
-        imgs.push(img.src)
-      }
-      localStorage.setItem("cartimg",JSON.stringify(imgs))
-      localStorage.setItem("additem",JSON.stringify(cart1))
+    Swal.fire({
+        title: 'Walnuts added to your cart',
+        showCancelButton: true,
+        confirmButtonText: 'OK',
+        icon: 'success',
+        cancelButtonText: 'View Cart'
+    }).then((result) => {
+        if (result.dismiss === Swal.DismissReason.cancel) {
+            window.location.href = "cart.html";
+        }
+    });
+    let img = document.getElementById('walnutsimage');
+    let price = document.getElementById("walnutsprice");
+    let cart1 = JSON.parse(localStorage.getItem("additem")) || [];
+    let imgs = JSON.parse(localStorage.getItem("cartimg")) || [];
+    if (!(imgs.includes(img.src))) {
+        cart1.push({"name": "Walnuts", "quantity": 1, "amount": price.textContent});
+        imgs.push(img.src);
     }
+    localStorage.setItem("cartimg", JSON.stringify(imgs));
+    localStorage.setItem("additem", JSON.stringify(cart1));
+}
+
 function addtocartpista(){
-      alert("Pista added to your cart")
-      let img=document.getElementById('pistaimg')
-      let price=document.getElementById("pistaiprice")
-      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
-      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
-      if(!(imgs.includes(img.src)))
-      {
-        cart1.push({"name":"Pista","quantity":1,"amount":price.textContent})
-        imgs.push(img.src)
-      }
-      localStorage.setItem("cartimg",JSON.stringify(imgs))
-      localStorage.setItem("additem",JSON.stringify(cart1))
+    Swal.fire({
+        title: 'Pista added to your cart',
+        showCancelButton: true,
+        confirmButtonText: 'OK',
+        icon: 'success',
+        cancelButtonText: 'View Cart'
+    }).then((result) => {
+        if (result.dismiss === Swal.DismissReason.cancel) {
+            window.location.href = "cart.html";
+        }
+    });
+    let img = document.getElementById('pistaimg');
+    let price = document.getElementById("pistaiprice");
+    let cart1 = JSON.parse(localStorage.getItem("additem")) || [];
+    let imgs = JSON.parse(localStorage.getItem("cartimg")) || [];
+    if (!(imgs.includes(img.src))) {
+        cart1.push({"name": "Pista", "quantity": 1, "amount": price.textContent});
+        imgs.push(img.src);
     }
+    localStorage.setItem("cartimg", JSON.stringify(imgs));
+    localStorage.setItem("additem", JSON.stringify(cart1));
+}
+
 function addtocartbadam(){
-      alert("Badam added to your cart")
-      let img=document.getElementById('badamimg')
-      let price=document.getElementById("badamprice")
-      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
-      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
-      if(!(imgs.includes(img.src)))
-      {
-        cart1.push({"name":"Badam","quantity":1,"amount":price.textContent})
-        imgs.push(img.src)
-      }
-      localStorage.setItem("cartimg",JSON.stringify(imgs))
-      localStorage.setItem("additem",JSON.stringify(cart1))
+    Swal.fire({
+        title: 'Badam added to your cart',
+        showCancelButton: true,
+        confirmButtonText: 'OK',
+        icon: 'success',
+        cancelButtonText: 'View Cart'
+    }).then((result) => {
+        if (result.dismiss === Swal.DismissReason.cancel) {
+            window.location.href = "cart.html";
+        }
+    });
+    let img = document.getElementById('badamimg');
+    let price = document.getElementById("badamprice");
+    let cart1 = JSON.parse(localStorage.getItem("additem")) || [];
+    let imgs = JSON.parse(localStorage.getItem("cartimg")) || [];
+    if (!(imgs.includes(img.src))) {
+        cart1.push({"name": "Badam", "quantity": 1, "amount": price.textContent});
+        imgs.push(img.src);
     }
+    localStorage.setItem("cartimg", JSON.stringify(imgs));
+    localStorage.setItem("additem", JSON.stringify(cart1));
+}
+
 function addtocartKaju(){
-      alert("Kaju added to your cart")
-      let img=document.getElementById('Kajuimg')
-      let price=document.getElementById("Kajuprice")
-      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
-      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
-      if(!(imgs.includes(img.src)))
-      {
-        cart1.push({"name":"Kaju","quantity":1,"amount":price.textContent})
-        imgs.push(img.src)
-      }
-      localStorage.setItem("cartimg",JSON.stringify(imgs))
-      localStorage.setItem("additem",JSON.stringify(cart1))
+    Swal.fire({
+        title: 'Kaju added to your cart',
+        showCancelButton: true,
+        confirmButtonText: 'OK',
+        icon: 'success',
+        cancelButtonText: 'View Cart'
+    }).then((result) => {
+        if (result.dismiss === Swal.DismissReason.cancel) {
+            window.location.href = "cart.html";
+        }
+    });
+    let img = document.getElementById('Kajuimg');
+    let price = document.getElementById("Kajuprice");
+    let cart1 = JSON.parse(localStorage.getItem("additem")) || [];
+    let imgs = JSON.parse(localStorage.getItem("cartimg")) || [];
+    if (!(imgs.includes(img.src))) {
+        cart1.push({"name": "Kaju", "quantity": 1, "amount": price.textContent});
+        imgs.push(img.src);
     }
+    localStorage.setItem("cartimg", JSON.stringify(imgs));
+    localStorage.setItem("additem", JSON.stringify(cart1));
+}
+
 function addtocartKishmish(){
-      alert("Kishmish added to your cart")
-      let img=document.getElementById('Kishmishimg')
-      let price=document.getElementById("Kishmishprice")
-      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
-      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
-      if(!(imgs.includes(img.src)))
-      {
-        cart1.push({"name":"Kishmish","quantity":1,"amount":price.textContent})
-        imgs.push(img.src)
-      }
-      localStorage.setItem("cartimg",JSON.stringify(imgs))
-      localStorage.setItem("additem",JSON.stringify(cart1))
+    Swal.fire({
+        title: 'Kishmish added to your cart',
+        showCancelButton: true,
+        confirmButtonText: 'OK',
+        icon: 'success',
+        cancelButtonText: 'View Cart'
+    }).then((result) => {
+        if (result.dismiss === Swal.DismissReason.cancel) {
+            window.location.href = "cart.html";
+        }
+    });
+    let img = document.getElementById('Kishmishimg');
+    let price = document.getElementById("Kishmishprice");
+    let cart1 = JSON.parse(localStorage.getItem("additem")) || [];
+    let imgs = JSON.parse(localStorage.getItem("cartimg")) || [];
+    if (!(imgs.includes(img.src))) {
+        cart1.push({"name": "Kishmish", "quantity": 1, "amount": price.textContent});
+        imgs.push(img.src);
     }
+    localStorage.setItem("cartimg", JSON.stringify(imgs));
+    localStorage.setItem("additem", JSON.stringify(cart1));
+}
+
 function addtocartDates(){
-      alert("Dates added to your cart")
-      let img=document.getElementById('Datesimg')
-      let price=document.getElementById("Datesprice")
-      let cart1=JSON.parse(localStorage.getItem("additem") )|| []
-      let imgs=JSON.parse(localStorage.getItem("cartimg") )|| []
-      if(!(imgs.includes(img.src)))
-      {
-        cart1.push({"name":"Dates","quantity":1,"amount":price.textContent})
-        imgs.push(img.src)
-      }
-      localStorage.setItem("cartimg",JSON.stringify(imgs))
-      localStorage.setItem("additem",JSON.stringify(cart1))
+    Swal.fire({
+        title: 'Dates added to your cart',
+        showCancelButton: true,
+        confirmButtonText: 'OK',
+        icon: 'success',
+        cancelButtonText: 'View Cart'
+    }).then((result) => {
+        if (result.dismiss === Swal.DismissReason.cancel) {
+            window.location.href = "cart.html";
+        }
+    });
+    let img = document.getElementById('Datesimg');
+    let price = document.getElementById("Datesprice");
+    let cart1 = JSON.parse(localStorage.getItem("additem")) || [];
+    let imgs = JSON.parse(localStorage.getItem("cartimg")) || [];
+    if (!(imgs.includes(img.src))) {
+        cart1.push({"name": "Dates", "quantity": 1, "amount": price.textContent});
+        imgs.push(img.src);
     }
+    localStorage.setItem("cartimg", JSON.stringify(imgs));
+    localStorage.setItem("additem", JSON.stringify(cart1));
+}
+
 
   let selectedPickle = '';
   let picklePrice = 0;
